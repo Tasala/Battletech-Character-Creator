@@ -16,7 +16,7 @@ Stage2::Stage2(QWidget *parent) :
     s2ChildHoodSkills3 = 0;
     s2ChildHoodTraits3 = 0;
 
-    // << "Martial Arts" << "MedTech" << "Melee Weapons" << "Navigation/Ground" << "Protocol/Affiliation" << "Small Arms";
+    // << "Martial Arts" << "MedTech/General" << "Melee Weapons" << "Navigation/Ground" << "Protocol/Affiliation" << "Small Arms";
 
 }
 
@@ -319,7 +319,7 @@ void Stage2::S2LateChildhood(QString nameLChild, QString casteName) {
         s2AffStreet = 45;
 
         S2AddSkills("Leadership",25);
-        S2AddSkills("MedTech",25);
+        S2AddSkills("MedTech/General",25);
         S2AddSkills("Melee Weapons",25);
         S2AddSkills("Negotiation",15);
         S2AddSkills("Perception",25);
@@ -356,7 +356,7 @@ void Stage2::S2LateChildhood(QString nameLChild, QString casteName) {
         s2AffProt = -15;
 
         S2AddSkills("Climbing", 30);
-        S2AddSkills("MedTech", 20);
+        S2AddSkills("MedTech/General", 20);
         S2AddSkills("Melee Weapons", 20);
         S2AddSkills("Perception", 45);
         S2AddSkills("Small Arms", 20);
@@ -431,7 +431,7 @@ void Stage2::S2LateChildhood(QString nameLChild, QString casteName) {
             s2ChildHoodAttrAdv1 = CreateSubSkillList("Interests");// << "Interests/Star League History" << "Interests/Combine History" << "Interests/FedSuns History" << "Interests/Regulan History" << "Interests/Remembrance" << "Interests/Marian History" << "Interests/Roman History" << "Interests/Nova Cat Vision Quest" << "Interests/Clan History" << "Interests/Theology" << "Interests/Coyote Rituals" << "Interests/Star League History" << "Interests/Clan Remembrance" << "Interests/Terran History" << "Interests/History" << "Interests/Literature" << "Interests/Holo-Games" << "Interests/Sports Statistics" << "Interests/Writings of Jerome Blake" << "Interests/BattleMechs";
             s2ChildHoodSkillsAdv1 = 10;
 
-            S2AddSkills("MedTech", 20);
+            S2AddSkills("MedTech/General", 20);
 //            S2AddSkills("Science/Any", 50); // SEE RULEZ!!
 
             s2ChildHoodLabelAdv2 = "Science/Any";
@@ -582,7 +582,7 @@ void Stage2::S2LateChildhood(QString nameLChild, QString casteName) {
         s2ChildHoodSkills2 = 30;
 
         S2AddSkills("Martial Arts", 30);
-        S2AddSkills("MedTech", 10);
+        S2AddSkills("MedTech/General", 10);
         S2AddSkills("Negotiation", 50);
         S2AddSkills("Perception", 30);
 //        S2AddSkills("Streetwise/Any", 20); // SEE RULEZ!!
@@ -631,7 +631,7 @@ void Stage2::S2LateChildhood(QString nameLChild, QString casteName) {
         S2AddSkills("Interests/Military History", 40);
         S2AddSkills("Leadership", 20);
         S2AddSkills("Martial Arts", 30);
-        S2AddSkills("MedTech", 10);
+        S2AddSkills("MedTech/General", 10);
         S2AddSkills("Melee Weapons", 20);
         S2AddSkills("Running", 30);
         S2AddSkills("Small Arms", 50);
@@ -677,7 +677,7 @@ void Stage2::S2LateChildhood(QString nameLChild, QString casteName) {
         s2ChildHoodAttrAdv1 = CreateSubSkillList("Language");// << "Language/English" << "Language/Mandarin Chinese" << "Language/Russian" << "Language/Cantonese" << "Language/Vietnamese" << "Japanese" << "Language/Arabic" << "Language/Swedenese" << "Language/French" << "Language/German" << "Language/Hindi" << "Language/Greek" << "Language/Italian" << "Language/Mongolian" << "Language/Romanian" << "Language/Slovak" << "Language/Spanish" << "Language/Urdu" << "Language/Scots Gaelic" << "Language/Swedish";
         s2ChildHoodSkillsAdv1 = 20;
 
-        S2AddSkills("MedTech", 10);
+        S2AddSkills("MedTech/General", 10);
         S2AddSkills("Melee Weapons", 15);
 
 
@@ -763,7 +763,7 @@ void Stage2::S2LateChildhood(QString nameLChild, QString casteName) {
 
         S2AddSkills("Interrogation", 20);
         S2AddSkills("Martial Arts", 20);
-        S2AddSkills("MedTech", 10);
+        S2AddSkills("MedTech/General", 10);
         S2AddSkills("Melee Weapons", 25);
         S2AddSkills("Negotiation", 20);
         S2AddSkills("Perception", 25);
@@ -1086,7 +1086,7 @@ QStringList Stage2::S2ClanBasicFieldChange(QString nameAffil) {
 
     QStringList swpNameAffil;
     nameAffil = "Protocol/" + nameAffil;
-    swpNameAffil << "Martial Arts" << "MedTech" << "Melee Weapons" << "Navigation/Ground" << nameAffil << "Small Arms";
+    swpNameAffil << "Martial Arts" << "MedTech/General" << "Melee Weapons" << "Navigation/Ground" << nameAffil << "Small Arms";
 
     return swpNameAffil;
 }

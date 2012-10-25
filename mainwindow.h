@@ -7,7 +7,7 @@
 #include "preqdialog.h"
 #include "about.h"
 #include "gmchartools.h"
-#include "chekver.h"
+// #include "chekver.h"
 #include "printtablewindow.h"
 
 //class QDragEnterEvent;
@@ -34,7 +34,7 @@ public:
     About *about;
     GMCharTools *gmchrtool;
     PrintTableWindow *ptrtablewin;
-    ChkVer *chkver;
+//    ChkVer *chkver;
 
     int MainInit();
     void ChangeMain();
@@ -63,7 +63,6 @@ public:
     QStringList CreatAffList(QString);
     QStringList CreatPhenList(QString);
     QStringList CreateList(QString, QStringList);
-
     QStringList CreateSubAffList(QString);
 
     void openFile(QString);
@@ -171,7 +170,7 @@ public slots:
 private slots:
     void on_TraitChrTableMain_cellClicked(int row, int column);
     void on_SkillChrTableMain_cellClicked(int row, int column);
-    void on_FeetsListMain_doubleClicked(QModelIndex index);
+    void on_FootsiesListMain_doubleClicked(QModelIndex index);
     void on_HandRightListMain_doubleClicked(QModelIndex index);
     void on_HandLeftListMain_doubleClicked(QModelIndex index);
     void on_LegsListMain_doubleClicked(QModelIndex index);
@@ -183,7 +182,7 @@ private slots:
     void on_HandLeftListMain_itemChanged(QListWidgetItem* item);
     void on_ItselfAllYouTable_cellDoubleClicked(int row, int column);
     void on_AllYouTable_cellDoubleClicked(int row, int column);
-    void on_FeetsListMain_itemChanged(QListWidgetItem* item);
+    void on_FootsiesListMain_itemChanged(QListWidgetItem* item);
     void on_LegsListMain_itemChanged(QListWidgetItem* item);
     void on_ArmRightListMain_itemChanged(QListWidgetItem* item);
     void on_ArmLeftListMain_itemChanged(QListWidgetItem* item);

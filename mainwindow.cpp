@@ -1,13 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
 #include <QtGui>
+#include <QDebug>
 #include <QString>
 #include <QMessageBox>
 #include <QMultiMap>
 
-#define VERSION "BT Character Creator v.0.8.11"
-#define SHORTVER "0.8.11"
+#define VERSION "BT Character Creator v.0.8.12 Debug"
+#define SHORTVER "0.8.12 Debug"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,68 +18,34 @@ MainWindow::MainWindow(QWidget *parent) :
     preqdial = new PreqDialog;
     gmchrtool = new GMCharTools;
     ptrtablewin = new PrintTableWindow;
-    chkver = new ChkVer(parent,SHORTVER);
+//    chkver = new ChkVer(parent,SHORTVER);
 
     connect(preqdial, SIGNAL(accepted()), this, SLOT(preqDial()));
     connect(gmchrtool,SIGNAL(accepted()), this, SLOT(AddGmNum()));
 
     chkWiz = false;
-//    xpMain = 5000;
-//    wizardMod = 0;
-    massChar = 0;
-//    countCBills = 0;
-    openFileName.first.clear();
+//	xpMain = 5000;
+    wizardMod = 0;
+    countCBills = 0;
+	massChar = 0;
+	openFileName.first.clear();
     openFileName.second = false;
     ui->statusXPAttrMain->setText(QString::number(xpMain));
     ui->statusXPAttrMain->setFont(QFont("MS Shell Dlg 2", 14, QFont::Bold));
     charNameMain = "Enter Character name";
 
     loadres = new LoadResurce;
-    if( loadres->loadSkills() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open skills file!"));
-    }
-
-    if( loadres->loadTraits() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open traits file!"));
-    }
-
-
-    if( loadres->loadAffl() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open affilation file!"));
-    }
-
-    if( loadres->loadPhen() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open phenotype file!"));
-    }
-
-    if( loadres->loadEye() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open eyecolor file!"));
-    }
-
-    if( loadres->loadHair() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open haircolor file!"));
-    }
-
-    if( loadres->loadPlanets() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open planets file!"));
-    }
-
-    if( loadres->loadEquip() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open equip file!"));
-    }
-
-    if( loadres->loadWeapons() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open weapons file!"));
-    }
-
-    if(loadres->loadSkillsDesc() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open Skills Description file!"));
-    }
-
-    if(loadres->loadTraitsDesc() == false ) {
-        QMessageBox::critical(this, tr("ERROR"),tr("Error open Traits Description file!"));
-    }
-
+    if( loadres->loadSkills()     == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening allskills.dat file!"));}
+    if( loadres->loadTraits()     == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening alltraits.dat file!"));}
+	if( loadres->loadAffl()       == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening affilations.dat file!"));}
+	if( loadres->loadPhen()       == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening phenotype.dat file!"));}
+	if( loadres->loadEye()        == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening eyecolor.dat file!"));}
+	if( loadres->loadHair()       == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening haircolor.dat file!"));}
+	if( loadres->loadPlanets()    == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening planets.dat file!"));}
+	if( loadres->loadEquip()      == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening equiplist.dat file!"));}
+	if( loadres->loadWeapons()    == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening weaponslist.dat file!"));}
+	if( loadres->loadSkillsDesc() == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening skillsdesc.dat file!"));}
+	if( loadres->loadTraitsDesc() == false ) {QMessageBox::critical(this, tr("ERROR"),tr("Error opening traitdesc.dat file!"));}
 
     ui->AffilationMain->addItems(loadres->afflList);
     ui->PhenotypeMain->addItems(loadres->phenList);
@@ -481,7 +447,6 @@ void MainWindow::CancelWizard() {
     ui->EDGSpinBoxMain->setValue(400);
 }
 
-
 QStringList MainWindow::CreatPhenList(QString namePhen) {
     QStringList phenSwp;
     phenSwp.clear();
@@ -678,7 +643,6 @@ double MainWindow::calcMassfromSTRscore(double STRscore) {
         return massChar;
 }
 
-
 //Simplified Code section below using the three functions created above
 //Greatly reduced number of lines of code with straightforward function calls
 void MainWindow::on_STRSpinBoxMain_valueChanged(int number)
@@ -689,9 +653,7 @@ void MainWindow::on_STRSpinBoxMain_valueChanged(int number)
     Linkmod = StatvaluetoLinkmod(Statvalue);
     massChar = calcMassfromSTRscore(number);
 
-    if (number < 100) {
-        ui->STRSpinBoxMain->setValue(100);
-    }
+    //if (number < 100) {ui->STRSpinBoxMain->setValue(100);}
     ui->ScoreSTRMain->setText(QString::number(Statvalue));
     ui->LinkSTRMain->setText(QString::number(Linkmod));
 
@@ -705,9 +667,7 @@ void MainWindow::on_BODSpinBoxMain_valueChanged(int number)
     Statvalue = scoreStattoStatvalue(number);
     Linkmod = StatvaluetoLinkmod(Statvalue);
 
-    if (number < 100) {
-        ui->BODSpinBoxMain->setValue(100);
-    }
+    //if (number < 100) {ui->BODSpinBoxMain->setValue(100);}
     ui->ScoreBODMain->setText(QString::number(Statvalue));
     ui->LinkBODMain->setText(QString::number(Linkmod));
 
@@ -721,9 +681,7 @@ void MainWindow::on_RFLSpinBoxMain_valueChanged(int number)
     Statvalue = scoreStattoStatvalue(number);
     Linkmod = StatvaluetoLinkmod(Statvalue);
 
-    if (number < 100) {
-        ui->RFLSpinBoxMain->setValue(100);
-    }
+    //if (number < 100) {ui->RFLSpinBoxMain->setValue(100);}
     ui->ScoreRFLMain->setText(QString::number(Statvalue));
     ui->LinkRFLMain->setText(QString::number(Linkmod));
 
@@ -737,9 +695,7 @@ void MainWindow::on_DEXSpinBoxMain_valueChanged(int number)
     Statvalue = scoreStattoStatvalue(number);
     Linkmod = StatvaluetoLinkmod(Statvalue);
 
-    if (number < 100) {
-        ui->DEXSpinBoxMain->setValue(100);
-    }
+    //if (number < 100) {ui->DEXSpinBoxMain->setValue(100);}
     ui->ScoreDEXMain->setText(QString::number(Statvalue));
     ui->LinkDEXMain->setText(QString::number(Linkmod));
     ChangeMain();
@@ -752,9 +708,7 @@ void MainWindow::on_INTSpinBoxMain_valueChanged(int number)
     Statvalue = scoreStattoStatvalue(number);
     Linkmod = StatvaluetoLinkmod(Statvalue);
 
-    if (number < 100) {
-        ui->INTSpinBoxMain->setValue(100);
-    }
+    //if (number < 100) {ui->INTSpinBoxMain->setValue(100);}
     ui->ScoreINTMain->setText(QString::number(Statvalue));
     ui->LinkINTMain->setText(QString::number(Linkmod));
     ChangeMain();
@@ -767,9 +721,7 @@ void MainWindow::on_WILSpinBoxMain_valueChanged(int number )
     Statvalue = scoreStattoStatvalue(number);
     Linkmod = StatvaluetoLinkmod(Statvalue);
 
-    if (number < 100) {
-        ui->WILSpinBoxMain->setValue(100);
-    }
+    //if (number < 100) {ui->WILSpinBoxMain->setValue(100);}
     ui->ScoreWILMain->setText(QString::number(Statvalue));
     ui->LinkWILMain->setText(QString::number(Linkmod));
     ChangeMain();
@@ -782,9 +734,7 @@ void MainWindow::on_CHASpinBoxMain_valueChanged(int number)
     Statvalue = scoreStattoStatvalue(number);
     Linkmod = StatvaluetoLinkmod(Statvalue);
 
-    if (number < 100) {
-        ui->CHASpinBoxMain->setValue(100);
-    }
+    //if (number < 100) {ui->CHASpinBoxMain->setValue(100);}
     ui->ScoreCHAMain->setText(QString::number(Statvalue));
     ui->LinkCHAMain->setText(QString::number(Linkmod));
     ChangeMain();
@@ -797,9 +747,7 @@ void MainWindow::on_EDGSpinBoxMain_valueChanged(int number)
     Statvalue = scoreStattoStatvalue(number);
     Linkmod = StatvaluetoLinkmod(Statvalue);
 
-    if (number < 100) {
-        ui->EDGSpinBoxMain->setValue(100);
-    }
+    //if (number < 100) {ui->EDGSpinBoxMain->setValue(100);}
     ui->ScoreEDGMain->setText(QString::number(Statvalue));
     ui->LinkEDGMain->setText(QString::number(Linkmod));
     ChangeMain();
@@ -822,7 +770,6 @@ void MainWindow::titleRenam(bool chk) {
 
     this->setWindowTitle(titl);
 }
-
 
 void MainWindow::ChangeMain() {
 
@@ -1972,7 +1919,6 @@ int MainWindow::CheckCBills(int number) {
     return cbill;
 }
 
-
 void MainWindow::on_SkillResetMain_clicked()
 {
     charSkillsMain = wz->chr_dat->charSkills;
@@ -2070,7 +2016,7 @@ void MainWindow::openFile(QString nameFile)
 
         file.close();
     } else {
-        QMessageBox::critical(this, tr("ERROR"),tr("Open error of the saved file!"));
+        QMessageBox::critical(this, tr("ERROR"),tr("Error opening the saved file!"));
     }  
 
     for(int i = 0; i < openFileData.count(); i++) {
@@ -2258,7 +2204,6 @@ void MainWindow::openFile(QString nameFile)
 
 }
 
-
 void MainWindow::saveFileAs(QString nameFile)
 {
     QStringList prepSave = prepSaveFile();
@@ -2286,84 +2231,84 @@ QStringList  MainWindow::prepSaveFile() {
     QStringList saveData;
     QString strData;
     saveData.clear();
-
-    strData = "name:" + charNameMain + "\n";
+	//Tas -  All the following \r escape sequences were changed from \n.
+    strData = "name:" + charNameMain + "\r\n";
     saveData << strData;
 
-    strData = "aff:" + affNameMain.first + "\n";
+    strData = "aff:" + affNameMain.first + "\r\n";
     saveData << strData;
 
-    strData = "subaff:" + subAffNameMain.first + "\n";
+    strData = "subaff:" + subAffNameMain.first + "\r";
     saveData << strData;
 
-    strData = "clancaste:" + clanCastNameMain.first + "\n";
+    strData = "clancaste:" + clanCastNameMain.first + "\r";
     saveData << strData;
 
-    strData = "earlychild:" + earlyChildNameMain.first + "\n";
+    strData = "earlychild:" + earlyChildNameMain.first + "\r";
     saveData << strData;
 
-    strData = "latechild:" + lateChildNameMain.first + "\n";
+    strData = "latechild:" + lateChildNameMain.first + "\r";
     saveData << strData;
 
-    strData = "schoolname:" + schoolNameMain.first + "\n";
+    strData = "schoolname:" + schoolNameMain.first + "\r";
     saveData << strData;
 
-    strData = "basicschool:" + basicSchoolMain.first + "\n";
+    strData = "basicschool:" + basicSchoolMain.first + "\r";
     saveData << strData;
 
-    strData = "advschool:" + advSchoolMain.first + "\n";
+    strData = "advschool:" + advSchoolMain.first + "\r";
     saveData << strData;
 
-    strData = "specschool:" + specSchoolMain.first + "\n";
+    strData = "specschool:" + specSchoolMain.first + "\r";
     saveData << strData;
 
-    strData = "reallife:" + realLifeMain + "\n";
+    strData = "reallife:" + realLifeMain + "\r";
     saveData << strData;
 
-    strData = "phenotype:" + phenotypeMain + "\n";
+    strData = "phenotype:" + phenotypeMain + "\r";
     saveData << strData;
 
-    strData = "nameplanet:" + namePlanetMain + "\n";
+    strData = "nameplanet:" + namePlanetMain + "\r";
     saveData << strData;
 
-    strData = "sex:" + sexMain + "\n";
+    strData = "sex:" + sexMain + "\r";
     saveData << strData;
 
-    strData = "age:" + QString::number(ageMain) + "\n";
+    strData = "age:" + QString::number(ageMain) + "\r";
     saveData << strData;
 
-    strData = "haircolor:" + hairMain + "\n";
+    strData = "haircolor:" + hairMain + "\r";
     saveData << strData;
 
-    strData = "eyecolor:" + eyeMain + "\n";
+    strData = "eyecolor:" + eyeMain + "\r";
     saveData << strData;
 
-    strData = "height:" + QString::number(heightMain) + "\n";
+    strData = "height:" + QString::number(heightMain) + "\r";
     saveData << strData;
 
-    strData = "weight:" + QString::number(weightMain) + "\n";
+    strData = "weight:" + QString::number(weightMain) + "\r";
     saveData << strData;
 
-    strData = "gmxpmod:" + QString::number(wizardMod) + "\n";
+    strData = "gmxpmod:" + QString::number(wizardMod) + "\r";
     saveData << strData;
 
-    strData = "cbillmod:" + QString::number(countCBills) + "\n";
+    strData = "cbillmod:" + QString::number(countCBills) + "\r";
     saveData << strData;
 
     QMapIterator <QString, int> i(charAttrMain);
     while(i.hasNext()) {
         i.next();
-        strData = "attr:" + i.key() + "=" + QString::number(i.value()) + "\n";
+        strData = "attr:" + i.key() + "=" + QString::number(i.value()) + "\r";
         saveData << strData;
     }
 
     for (int i = 0; i < charSkillsMain.count(); i++) {
-        strData = "skill:" + charSkillsMain[i].first + "=" + QString::number(charSkillsMain[i].second) + "\n";
+        strData = "skill:" + charSkillsMain[i].first + "=" + QString::number(charSkillsMain[i].second) + "\r";
         saveData << strData;
     }
 
     for (int i = 0; i < charTraitsMain.count(); i++) {
-        strData = "trait:" + charTraitsMain[i].first + "=" + QString::number(charTraitsMain[i].second) + "\n";
+        strData = "trait:" + charTraitsMain[i].first + "=" + QString::number(charTraitsMain[i].second) + "\r";
         saveData << strData;
     }
 
@@ -2374,26 +2319,26 @@ QStringList  MainWindow::prepSaveFile() {
             saveData << equipChar[i][j] << ";";
         }
         saveData.removeLast();
-        saveData << "\n";
+        saveData << "\r";
     }
 
     QMapIterator <QString, int> j(preCharAttrMain);
     while(j.hasNext()) {
         j.next();
         if(j.value() >0) {
-            strData = "preattr:" + j.key() + "=" + QString::number(j.value()) + "\n";
+            strData = "preattr:" + j.key() + "=" + QString::number(j.value()) + "\r";
             saveData << strData;
         }
 
     }
 
     for (int i = 0; i < preCharSkillsMain.count(); i++) {
-        strData = "preskill:" + preCharSkillsMain[i].first + "=" + QString::number(preCharSkillsMain[i].second) + "\n";
+        strData = "preskill:" + preCharSkillsMain[i].first + "=" + QString::number(preCharSkillsMain[i].second) + "\r";
         saveData << strData;
     }
 
     for (int i = 0; i < preCharTraitsMain.count(); i++) {
-        strData = "pretrait:" + preCharTraitsMain[i].first + "=" + QString::number(preCharTraitsMain[i].second) + "\n";
+        strData = "pretrait:" + preCharTraitsMain[i].first + "=" + QString::number(preCharTraitsMain[i].second) + "\r";
         saveData << strData;
     }
 
@@ -2401,7 +2346,7 @@ QStringList  MainWindow::prepSaveFile() {
     while(g.hasNext()) {
         g.next();
         if(g.value() >0) {
-            strData = "equiploc:" + g.key() + "=" + g.value() + "\n";
+            strData = "equiploc:" + g.key() + "=" + g.value() + "\r";
             saveData << strData;
         }
 
@@ -2419,13 +2364,13 @@ QStringList  MainWindow::prepSaveFile() {
     }
 
     for(int i =0; i < youWeapon.count(); i++) {
-        strData = "chrweapon:" + youWeapon[i][0] + "\n";
+        strData = "chrweapon:" + youWeapon[i][0] + "\r";
         saveData << strData;
     }
 
-    saveData << "<notes>\n";
+    saveData << "<notes>\r";
     saveData << ui->NotesMain->toPlainText();
-    saveData << "\n</notes>\n";
+    saveData << "\r</notes>\r";
 
     return saveData;
 }
@@ -2480,7 +2425,6 @@ void MainWindow::on_HomePlanetMain_activated(QString nameElem)
     namePlanetMain = nameElem;
     titleRenam(false);
 }
-
 
 void MainWindow::on_SexMain_activated(QString nameElem)
 {
@@ -2565,7 +2509,6 @@ int MainWindow::findSkill(QString fSkillName, QList<QPair<QString, int> > nameLi
     return 100500; //magic number
 }
 
-
 void MainWindow::on_SkillAllTableMain_cellDoubleClicked(int row, int)
 {
     QTableWidgetItem *skillName = new QTableWidgetItem;
@@ -2577,7 +2520,6 @@ void MainWindow::on_SkillAllTableMain_cellDoubleClicked(int row, int)
 
     ChangeMain();
 }
-
 
 void MainWindow::on_SkillChrTableMain_cellDoubleClicked(int row, int cel)
 {
@@ -2784,15 +2726,14 @@ void MainWindow::on_actionNew_triggered()
     ui->LegsListMain->clear();
     ui->LegsListMain->setToolTip("Legs");
     ui->LegsListMain->addItem("Legs");
-    ui->FeetsListMain->clear();
-    ui->FeetsListMain->setToolTip("Feets");
-    ui->FeetsListMain->addItem("Feets");
+    ui->FootsiesListMain->clear();
+    ui->FootsiesListMain->setToolTip("Footsies");
+    ui->FootsiesListMain->addItem("Footsies");
 
 
     PrintYouWeapon();
     ChangeMain();
 }
-
 
 void MainWindow::on_EquipType_activated(QString nameElem)
 {
@@ -2907,7 +2848,6 @@ void MainWindow::on_EquipAllTableMain_cellDoubleClicked(int row, int)
     ChangeMain();
 
 }
-
 
 void MainWindow::AddEquip(QStringList nameElem) {
 
@@ -3426,7 +3366,6 @@ bool MainWindow::CheckPrereq() {
     return check;
 }
 
-
 void MainWindow::on_actionPrint_triggered()
 {
     if(charSkillsMain.count() > 67) {
@@ -3455,8 +3394,6 @@ void MainWindow::on_actionPrint_triggered()
 
 
 }
-
-
 
 void MainWindow::on_actionAbout_triggered()
 {
@@ -4220,8 +4157,7 @@ void MainWindow::AddGmNum() {
 void MainWindow::on_HeadListMain_itemChanged(QListWidgetItem*)
 {
     ui->HeadListMain->clear();
-    AddInvElem(dropElem[4]);
-
+	AddInvElem(dropElem[4]);
 }
 
 void MainWindow::on_BodyListMain_itemChanged(QListWidgetItem* )
@@ -4260,9 +4196,9 @@ void MainWindow::on_LegsListMain_itemChanged(QListWidgetItem* )
     AddInvElem(dropElem[4]);
 }
 
-void MainWindow::on_FeetsListMain_itemChanged(QListWidgetItem* )
+void MainWindow::on_FootsiesListMain_itemChanged(QListWidgetItem* )
 {
-    ui->FeetsListMain->clear();
+    ui->FootsiesListMain->clear();
     AddInvElem(dropElem[4]);
 }
 
@@ -4392,7 +4328,7 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event) {
     ui->HandLeftListMain->setDragDropMode(QListWidget::NoDragDrop);
     ui->HandRightListMain->setDragDropMode(QListWidget::NoDragDrop);
     ui->LegsListMain->setDragDropMode(QListWidget::NoDragDrop);
-    ui->FeetsListMain->setDragDropMode(QListWidget::NoDragDrop);
+    ui->FootsiesListMain->setDragDropMode(QListWidget::NoDragDrop);
 
     if(event->mimeData()->hasFormat("application/x-qabstractitemmodeldatalist")) {
         QByteArray encoded = event->mimeData()->data("application/x-qabstractitemmodeldatalist");
@@ -4456,7 +4392,7 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event) {
         }
 
         if(dropElem[4] == "Feet") {
-            ui->FeetsListMain->setDragDropMode(QListWidget::DropOnly);
+            ui->FootsiesListMain->setDragDropMode(QListWidget::DropOnly);
         }
 
         if(dropElem[4] == "Full") {
@@ -4467,13 +4403,14 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event) {
             ui->HandLeftListMain->setDragDropMode(QListWidget::DropOnly);
             ui->HandRightListMain->setDragDropMode(QListWidget::DropOnly);
             ui->LegsListMain->setDragDropMode(QListWidget::DropOnly);
-            ui->FeetsListMain->setDragDropMode(QListWidget::DropOnly);
-        }
+            ui->FootsiesListMain->setDragDropMode(QListWidget::DropOnly);
+        } else {
+			ui->HeadListMain->setDragDropMode(QListWidget::NoDragDrop);
+		} //Tas The above else statement added by me for debugging inventory drops.
 
     }
 
 }
-
 
 QString MainWindow::InventToolTip(QString nameElem) {
 
@@ -4554,9 +4491,9 @@ void MainWindow::AddInvElem(QString nameElem) {
         }
 
         if (cutLocList[i] == "Feet") {
-            ui->FeetsListMain->clear();
-            ui->FeetsListMain->setToolTip(InventToolTip(dropElem[0]));
-            ui->FeetsListMain->addItem(cutName);
+            ui->FootsiesListMain->clear();
+            ui->FootsiesListMain->setToolTip(InventToolTip(dropElem[0]));
+            ui->FootsiesListMain->addItem(cutName);
         }
 
         if (cutLocList[i] == "Full") {
@@ -4581,9 +4518,9 @@ void MainWindow::AddInvElem(QString nameElem) {
             ui->LegsListMain->clear();
             ui->LegsListMain->setToolTip(InventToolTip(dropElem[0]));
             ui->LegsListMain->addItem(cutName);
-            ui->FeetsListMain->clear();
-            ui->FeetsListMain->setToolTip(InventToolTip(dropElem[0]));
-            ui->FeetsListMain->addItem(cutName);
+            ui->FootsiesListMain->clear();
+            ui->FootsiesListMain->setToolTip(InventToolTip(dropElem[0]));
+            ui->FootsiesListMain->addItem(cutName);
         }
 
     }
@@ -4655,9 +4592,9 @@ void MainWindow::EraseLocation(QString name) {
         }
 
         if (eraseLoc[i] == "Feet") {
-            ui->FeetsListMain->clear();
-            ui->FeetsListMain->setToolTip("Feet");
-            ui->FeetsListMain->addItem("Feet");
+            ui->FootsiesListMain->clear();
+            ui->FootsiesListMain->setToolTip("Feet");
+            ui->FootsiesListMain->addItem("Feet");
             loc["Feet"] = "Feet";
         }
 
@@ -4683,9 +4620,9 @@ void MainWindow::EraseLocation(QString name) {
             ui->LegsListMain->clear();
             ui->LegsListMain->setToolTip("Legs");
             ui->LegsListMain->addItem("Legs");
-            ui->FeetsListMain->clear();
-            ui->FeetsListMain->setToolTip("Feets");
-            ui->FeetsListMain->addItem("Feets");
+            ui->FootsiesListMain->clear();
+            ui->FootsiesListMain->setToolTip("Footsies");
+            ui->FootsiesListMain->addItem("Footsies");
         }
 
 
@@ -4693,10 +4630,10 @@ void MainWindow::EraseLocation(QString name) {
     }
 }
 
-
 void MainWindow::on_HeadListMain_doubleClicked(QModelIndex index)
 {
-//    ui->HeadListMain->clear();
+	//Tas debug Inventory - Next line was previously commented out. I uncommented it.
+	ui->HeadListMain->clear();
     EraseLocation("Head");
 }
 
@@ -4736,13 +4673,11 @@ void MainWindow::on_HandRightListMain_doubleClicked(QModelIndex index)
     EraseLocation("Hands");
 }
 
-void MainWindow::on_FeetsListMain_doubleClicked(QModelIndex index)
+void MainWindow::on_FootsiesListMain_doubleClicked(QModelIndex index)
 {
-//    ui->FeetsListMain->clear();
-    EraseLocation("Feets");
+//    ui->FootsiesListMain->clear();
+    EraseLocation("Footsies");
 }
-
-
 
 void MainWindow::on_SkillChrTableMain_cellClicked(int row, int)
 {
@@ -4775,7 +4710,6 @@ void MainWindow::on_TraitChrTableMain_cellClicked(int row, int)
 
     }
 }
-
 
 QStringList MainWindow::CreateSubAffList(QString nameElem) {
     QStringList subAffList;
@@ -4856,7 +4790,6 @@ QStringList MainWindow::CreateSubAffList(QString nameElem) {
 
     return subAffList;
 }
-
 
 void MainWindow::prerqPrintTable()
 {

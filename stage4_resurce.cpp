@@ -746,7 +746,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
             s4Elem2 = 50;
 
             S4AddSkills("Investigation",75);
-            S4AddSkills("MedTech",50);
+            S4AddSkills("MedTech/General",50);
 //            S4AddSkills("Science/Any",75); //SEE RULEZ!!!
 
             s4LabelElem3 = "Science/Any";
@@ -984,7 +984,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
             s4SkillsElem7 << S4FieldSkills(s4BasicSchool.first) << S4FieldSkills(s4AdvSchool.first) << S4FieldSkills(s4SpecSchool.first);
         } else {
             s4LabelElem7 = "40XP x 4 skill";
-            s4SkillsElem7 << "Acrobatics" << "Acting" << "Administration" << "Animal Handling" << "Appraisal" << "Archery" << "Art/Any" << "Artillery" << "Career" << "Climbing" << "Communications" << "Computers" << "Cryptography" << "Demolitions" << "Disguise" << "Driving" << "Escape Artist" << "Forgery" << "Gunnery" << "Interests/Any" << "Interrogation" << "Investigation" << "Language" << "Leadership" << "Martial Arts" << "MedTech" << "Melee Weapons" << "Navigation" << "Negotiation" << "Perception" << "Piloting" << "Prestidigitation" << "Protocol" << "Running" << "Science" << "Security Systems" << "Sensor Operations" << "Small Arms" << "Stealth" << "Strategy" << "Streetwise" << "Support Weapons" << "Surgery" << "Survival" << "Swimming" << "Tactics" << "Technician" << "Thrown Weapons" << "Tracking" << "Training" << "Zero-G Operations";
+            s4SkillsElem7 << "Acrobatics" << "Acting" << "Administration" << "Animal Handling" << "Appraisal" << "Archery" << "Art/Any" << "Artillery" << "Career" << "Climbing" << "Communications" << "Computers" << "Cryptography" << "Demolitions" << "Disguise" << "Driving" << "Escape Artist" << "Forgery" << "Gunnery" << "Interests/Any" << "Interrogation" << "Investigation" << "Language" << "Leadership" << "Martial Arts" << "MedTech/General" << "Melee Weapons" << "Navigation" << "Negotiation" << "Perception" << "Piloting" << "Prestidigitation" << "Protocol" << "Running" << "Science" << "Security Systems" << "Sensor Operations" << "Small Arms" << "Stealth" << "Strategy" << "Streetwise" << "Support Weapons" << "Surgery" << "Survival" << "Swimming" << "Tactics" << "Technician" << "Thrown Weapons" << "Tracking" << "Training" << "Zero-G Operations";
         }
 
         s4SkillsElem7.removeDuplicates();
@@ -1280,7 +1280,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
             S4AddSkills("Interrogation",35);
             S4AddSkills("Investigation",40);
             S4AddSkills("Martial Arts",25);
-            S4AddSkills("MedTech",35);
+            S4AddSkills("MedTech/General",35);
 
             s4AffProt = 60;
 
@@ -1305,7 +1305,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
             S4AddSkills("Demolitions", 50);
             S4AddSkills("Disguise", 35);
             S4AddSkills("Interrogation",25);
-            S4AddSkills("MedTech",50);
+            S4AddSkills("MedTech/General",50);
             S4AddSkills("Melee Weapons",35);
             S4AddSkills("Perception",25);
             S4AddSkills("Security Systems",40);
@@ -1572,7 +1572,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
 
         S4AddSkills("Martial Arts",25);
         S4AddSkills("Melee Weapons",30);
-        S4AddSkills("MedTech",15);
+        S4AddSkills("MedTech/General",15);
 //        S4AddSkills("Navigation/Any",50); //SEE RULEZ!!!
 
         s4LabelElem3 = "Navigation/Any";
@@ -1631,7 +1631,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
         s4SkillsElem1 = CreateSubSkillList("Language");//  << "Language/English" << "Language/Mandarin Chinese" << "Language/Russian" << "Language/Cantonese" << "Language/Vietnamese" << "Language/Japanese" << "Language/Arabic" << "Language/Swedenese" << "Language/French" << "Language/German" << "Language/Hindi" << "Language/Greek" << "Language/Italian" << "Language/Mongolian" << "Language/Romanian" << "Language/Slovak" << "Language/Spanish" << "Language/Urdu" << "Language/Scots Gaelic" << "Language/Swedish";
         s4Elem1 = 35;
 
-        S4AddSkills("MedTech",40);
+        S4AddSkills("MedTech/General",40);
         S4AddSkills("Navigation/Space",35);
         S4AddSkills("Perception",50);
 //        S4AddSkills("Survival/Any",40); //SEE RULEZ!!!
@@ -1989,7 +1989,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
         s4Elem3 = 45;
 
         S4AddSkills("Leadership",35);
-        S4AddSkills("MedTech",65);
+        S4AddSkills("MedTech/General",65);
         S4AddSkills("Perception",85);
 
         s4AffProt = 65;
@@ -2224,7 +2224,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
             s4Elem3 = 10;
 
             S4AddSkills("Leadership",15);
-            S4AddSkills("MedTech",30);
+            S4AddSkills("MedTech/General",30);
             S4AddSkills("Negotiation",25);
             S4AddSkills("Perception",15);
 //            S4AddSkills("+150 total additional XP (+25 XP each assigned to a maximum of six Skills the character possesses from his Military Fields)",150); //SEE RULEZ!!!
@@ -2254,7 +2254,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
             s4Elem3 = 10;
 
             S4AddSkills("Leadership",15);
-            S4AddSkills("MedTech",30);
+            S4AddSkills("MedTech/General",30);
             S4AddSkills("Negotiation",25);
             S4AddSkills("Perception",15);
 //            S4AddSkills("+150 total additional XP (+25 XP each assigned to a maximum of six Skills the character possesses from his Military Fields)",150); //SEE RULEZ!!!
@@ -2295,7 +2295,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
             s4AffLang = 15;
             S4AddSkills("Leadership",15);
             S4AddSkills("Martial Arts",10);
-            S4AddSkills("MedTech",20);
+            S4AddSkills("MedTech/General",20);
             S4AddSkills("Perception",20);
 //            S4AddSkills("+175 total additional XP (+25 XP each assigned to a maximum of seven Skills the character possesses from his Military Fields)",20); //SEE RULEZ!!!
 
@@ -2335,7 +2335,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
             s4AffLang = 15;
             S4AddSkills("Leadership",15);
             S4AddSkills("Martial Arts",10);
-            S4AddSkills("MedTech",20);
+            S4AddSkills("MedTech/General",20);
             S4AddSkills("Perception",20);
 //            S4AddSkills("+175 total additional XP (+25 XP each assigned to a maximum of seven Skills the character possesses from his Military Fields)",20); //SEE RULEZ!!!
 
@@ -2375,7 +2375,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
             s4AffLang = 15;
             S4AddSkills("Leadership",15);
             S4AddSkills("Martial Arts",10);
-            S4AddSkills("MedTech",20);
+            S4AddSkills("MedTech/General",20);
             S4AddSkills("Perception",20);
 //            S4AddSkills("+175 total additional XP (+25 XP each assigned to a maximum of seven Skills the character possesses from his Military Fields)",20); //SEE RULEZ!!!
 
@@ -2414,7 +2414,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
             s4AffLang = 15;
             S4AddSkills("Leadership",15);
             S4AddSkills("Martial Arts",10);
-            S4AddSkills("MedTech",20);
+            S4AddSkills("MedTech/General",20);
             S4AddSkills("Perception",20);
 //            S4AddSkills("+175 total additional XP (+25 XP each assigned to a maximum of seven Skills the character possesses from his Military Fields)",20); //SEE RULEZ!!!
 
@@ -2512,7 +2512,7 @@ void Stage4::S4ChooseLife(QString nameElem) {
         S4AddSkills("Interrogation",25);
         S4AddSkills("Investigation",25);
         S4AddSkills("Leadership",25);
-        S4AddSkills("MedTech",30);
+        S4AddSkills("MedTech/General",30);
         S4AddSkills("Melee Weapons",45);
 //        S4AddSkills("Navigation/Any",35); //SEE RULEZ!!!
 

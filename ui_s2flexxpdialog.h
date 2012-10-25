@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 's2flexxpdialog.ui'
 **
-** Created: Wed 14. Sep 16:02:44 2011
-**      by: Qt User Interface Compiler version 4.7.0
+** Created: Sun Oct 21 01:55:28 2012
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -40,42 +40,42 @@ public:
     QLabel *label_2;
     QGroupBox *groupBox;
     QLabel *S2FlexDialFreeXPLabel;
-    QWidget *layoutWidget;
+    QWidget *layoutWidget_2;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_6;
     QLabel *S2FlexDialBODLabel;
     QSpinBox *S2FlexDialBODSpinBox;
-    QWidget *layoutWidget_2;
+    QWidget *layoutWidget_3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_8;
     QLabel *S2FlexDialRFLLabel;
     QSpinBox *S2FlexDialRFLSpinBox;
-    QWidget *layoutWidget_3;
+    QWidget *layoutWidget_4;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_10;
     QLabel *S2FlexDialDEXLabel;
     QSpinBox *S2FlexDialDEXSpinBox;
-    QWidget *layoutWidget_4;
+    QWidget *layoutWidget_5;
     QHBoxLayout *horizontalLayout_5;
     QLabel *label_12;
     QLabel *S2FlexDialINTLabel;
     QSpinBox *S2FlexDialINTSpinBox;
-    QWidget *layoutWidget_5;
+    QWidget *layoutWidget_6;
     QHBoxLayout *horizontalLayout_6;
     QLabel *label_14;
     QLabel *S2FlexDialWILLabel;
     QSpinBox *S2FlexDialWILSpinBox;
-    QWidget *layoutWidget_6;
+    QWidget *layoutWidget_7;
     QHBoxLayout *horizontalLayout_7;
     QLabel *label_16;
     QLabel *S2FlexDialCHALabel;
     QSpinBox *S2FlexDialCHASpinBox;
-    QWidget *layoutWidget_7;
+    QWidget *layoutWidget_8;
     QHBoxLayout *horizontalLayout_8;
     QLabel *label_18;
     QLabel *S2FlexDialEDGLabel;
     QSpinBox *S2FlexDialEDGSpinBox;
-    QWidget *layoutWidget1;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
     QLabel *label_4;
     QLabel *S2FlexDialSTRLabel;
@@ -208,184 +208,184 @@ public:
         S2FlexDialFreeXPLabel = new QLabel(groupBox);
         S2FlexDialFreeXPLabel->setObjectName(QString::fromUtf8("S2FlexDialFreeXPLabel"));
         S2FlexDialFreeXPLabel->setGeometry(QRect(30, 19, 51, 21));
-        layoutWidget = new QWidget(S2FlexXPDialog);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 130, 104, 22));
-        horizontalLayout_2 = new QHBoxLayout(layoutWidget);
+        layoutWidget_2 = new QWidget(S2FlexXPDialog);
+        layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
+        layoutWidget_2->setGeometry(QRect(10, 130, 104, 22));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget_2);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_6 = new QLabel(layoutWidget);
+        label_6 = new QLabel(layoutWidget_2);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
         horizontalLayout_2->addWidget(label_6);
 
-        S2FlexDialBODLabel = new QLabel(layoutWidget);
+        S2FlexDialBODLabel = new QLabel(layoutWidget_2);
         S2FlexDialBODLabel->setObjectName(QString::fromUtf8("S2FlexDialBODLabel"));
 
         horizontalLayout_2->addWidget(S2FlexDialBODLabel);
 
-        S2FlexDialBODSpinBox = new QSpinBox(layoutWidget);
+        S2FlexDialBODSpinBox = new QSpinBox(layoutWidget_2);
         S2FlexDialBODSpinBox->setObjectName(QString::fromUtf8("S2FlexDialBODSpinBox"));
         S2FlexDialBODSpinBox->setAccelerated(true);
         S2FlexDialBODSpinBox->setMaximum(200);
 
         horizontalLayout_2->addWidget(S2FlexDialBODSpinBox);
 
-        layoutWidget_2 = new QWidget(S2FlexXPDialog);
-        layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(10, 160, 103, 22));
-        horizontalLayout_3 = new QHBoxLayout(layoutWidget_2);
+        layoutWidget_3 = new QWidget(S2FlexXPDialog);
+        layoutWidget_3->setObjectName(QString::fromUtf8("layoutWidget_3"));
+        layoutWidget_3->setGeometry(QRect(10, 160, 103, 22));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget_3);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_8 = new QLabel(layoutWidget_2);
+        label_8 = new QLabel(layoutWidget_3);
         label_8->setObjectName(QString::fromUtf8("label_8"));
 
         horizontalLayout_3->addWidget(label_8);
 
-        S2FlexDialRFLLabel = new QLabel(layoutWidget_2);
+        S2FlexDialRFLLabel = new QLabel(layoutWidget_3);
         S2FlexDialRFLLabel->setObjectName(QString::fromUtf8("S2FlexDialRFLLabel"));
 
         horizontalLayout_3->addWidget(S2FlexDialRFLLabel);
 
-        S2FlexDialRFLSpinBox = new QSpinBox(layoutWidget_2);
+        S2FlexDialRFLSpinBox = new QSpinBox(layoutWidget_3);
         S2FlexDialRFLSpinBox->setObjectName(QString::fromUtf8("S2FlexDialRFLSpinBox"));
         S2FlexDialRFLSpinBox->setAccelerated(true);
         S2FlexDialRFLSpinBox->setMaximum(200);
 
         horizontalLayout_3->addWidget(S2FlexDialRFLSpinBox);
 
-        layoutWidget_3 = new QWidget(S2FlexXPDialog);
-        layoutWidget_3->setObjectName(QString::fromUtf8("layoutWidget_3"));
-        layoutWidget_3->setGeometry(QRect(10, 190, 103, 22));
-        horizontalLayout_4 = new QHBoxLayout(layoutWidget_3);
+        layoutWidget_4 = new QWidget(S2FlexXPDialog);
+        layoutWidget_4->setObjectName(QString::fromUtf8("layoutWidget_4"));
+        layoutWidget_4->setGeometry(QRect(10, 190, 103, 22));
+        horizontalLayout_4 = new QHBoxLayout(layoutWidget_4);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
         horizontalLayout_4->setContentsMargins(0, 0, 0, 0);
-        label_10 = new QLabel(layoutWidget_3);
+        label_10 = new QLabel(layoutWidget_4);
         label_10->setObjectName(QString::fromUtf8("label_10"));
 
         horizontalLayout_4->addWidget(label_10);
 
-        S2FlexDialDEXLabel = new QLabel(layoutWidget_3);
+        S2FlexDialDEXLabel = new QLabel(layoutWidget_4);
         S2FlexDialDEXLabel->setObjectName(QString::fromUtf8("S2FlexDialDEXLabel"));
 
         horizontalLayout_4->addWidget(S2FlexDialDEXLabel);
 
-        S2FlexDialDEXSpinBox = new QSpinBox(layoutWidget_3);
+        S2FlexDialDEXSpinBox = new QSpinBox(layoutWidget_4);
         S2FlexDialDEXSpinBox->setObjectName(QString::fromUtf8("S2FlexDialDEXSpinBox"));
         S2FlexDialDEXSpinBox->setAccelerated(true);
         S2FlexDialDEXSpinBox->setMaximum(200);
 
         horizontalLayout_4->addWidget(S2FlexDialDEXSpinBox);
 
-        layoutWidget_4 = new QWidget(S2FlexXPDialog);
-        layoutWidget_4->setObjectName(QString::fromUtf8("layoutWidget_4"));
-        layoutWidget_4->setGeometry(QRect(10, 220, 103, 22));
-        horizontalLayout_5 = new QHBoxLayout(layoutWidget_4);
+        layoutWidget_5 = new QWidget(S2FlexXPDialog);
+        layoutWidget_5->setObjectName(QString::fromUtf8("layoutWidget_5"));
+        layoutWidget_5->setGeometry(QRect(10, 220, 103, 22));
+        horizontalLayout_5 = new QHBoxLayout(layoutWidget_5);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
         horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
-        label_12 = new QLabel(layoutWidget_4);
+        label_12 = new QLabel(layoutWidget_5);
         label_12->setObjectName(QString::fromUtf8("label_12"));
 
         horizontalLayout_5->addWidget(label_12);
 
-        S2FlexDialINTLabel = new QLabel(layoutWidget_4);
+        S2FlexDialINTLabel = new QLabel(layoutWidget_5);
         S2FlexDialINTLabel->setObjectName(QString::fromUtf8("S2FlexDialINTLabel"));
 
         horizontalLayout_5->addWidget(S2FlexDialINTLabel);
 
-        S2FlexDialINTSpinBox = new QSpinBox(layoutWidget_4);
+        S2FlexDialINTSpinBox = new QSpinBox(layoutWidget_5);
         S2FlexDialINTSpinBox->setObjectName(QString::fromUtf8("S2FlexDialINTSpinBox"));
         S2FlexDialINTSpinBox->setAccelerated(true);
         S2FlexDialINTSpinBox->setMaximum(200);
 
         horizontalLayout_5->addWidget(S2FlexDialINTSpinBox);
 
-        layoutWidget_5 = new QWidget(S2FlexXPDialog);
-        layoutWidget_5->setObjectName(QString::fromUtf8("layoutWidget_5"));
-        layoutWidget_5->setGeometry(QRect(10, 250, 103, 22));
-        horizontalLayout_6 = new QHBoxLayout(layoutWidget_5);
+        layoutWidget_6 = new QWidget(S2FlexXPDialog);
+        layoutWidget_6->setObjectName(QString::fromUtf8("layoutWidget_6"));
+        layoutWidget_6->setGeometry(QRect(10, 250, 103, 22));
+        horizontalLayout_6 = new QHBoxLayout(layoutWidget_6);
         horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
         horizontalLayout_6->setContentsMargins(0, 0, 0, 0);
-        label_14 = new QLabel(layoutWidget_5);
+        label_14 = new QLabel(layoutWidget_6);
         label_14->setObjectName(QString::fromUtf8("label_14"));
 
         horizontalLayout_6->addWidget(label_14);
 
-        S2FlexDialWILLabel = new QLabel(layoutWidget_5);
+        S2FlexDialWILLabel = new QLabel(layoutWidget_6);
         S2FlexDialWILLabel->setObjectName(QString::fromUtf8("S2FlexDialWILLabel"));
 
         horizontalLayout_6->addWidget(S2FlexDialWILLabel);
 
-        S2FlexDialWILSpinBox = new QSpinBox(layoutWidget_5);
+        S2FlexDialWILSpinBox = new QSpinBox(layoutWidget_6);
         S2FlexDialWILSpinBox->setObjectName(QString::fromUtf8("S2FlexDialWILSpinBox"));
         S2FlexDialWILSpinBox->setAccelerated(true);
         S2FlexDialWILSpinBox->setMaximum(200);
 
         horizontalLayout_6->addWidget(S2FlexDialWILSpinBox);
 
-        layoutWidget_6 = new QWidget(S2FlexXPDialog);
-        layoutWidget_6->setObjectName(QString::fromUtf8("layoutWidget_6"));
-        layoutWidget_6->setGeometry(QRect(10, 280, 104, 22));
-        horizontalLayout_7 = new QHBoxLayout(layoutWidget_6);
+        layoutWidget_7 = new QWidget(S2FlexXPDialog);
+        layoutWidget_7->setObjectName(QString::fromUtf8("layoutWidget_7"));
+        layoutWidget_7->setGeometry(QRect(10, 280, 104, 22));
+        horizontalLayout_7 = new QHBoxLayout(layoutWidget_7);
         horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
         horizontalLayout_7->setContentsMargins(0, 0, 0, 0);
-        label_16 = new QLabel(layoutWidget_6);
+        label_16 = new QLabel(layoutWidget_7);
         label_16->setObjectName(QString::fromUtf8("label_16"));
 
         horizontalLayout_7->addWidget(label_16);
 
-        S2FlexDialCHALabel = new QLabel(layoutWidget_6);
+        S2FlexDialCHALabel = new QLabel(layoutWidget_7);
         S2FlexDialCHALabel->setObjectName(QString::fromUtf8("S2FlexDialCHALabel"));
 
         horizontalLayout_7->addWidget(S2FlexDialCHALabel);
 
-        S2FlexDialCHASpinBox = new QSpinBox(layoutWidget_6);
+        S2FlexDialCHASpinBox = new QSpinBox(layoutWidget_7);
         S2FlexDialCHASpinBox->setObjectName(QString::fromUtf8("S2FlexDialCHASpinBox"));
         S2FlexDialCHASpinBox->setAccelerated(true);
         S2FlexDialCHASpinBox->setMaximum(200);
 
         horizontalLayout_7->addWidget(S2FlexDialCHASpinBox);
 
-        layoutWidget_7 = new QWidget(S2FlexXPDialog);
-        layoutWidget_7->setObjectName(QString::fromUtf8("layoutWidget_7"));
-        layoutWidget_7->setGeometry(QRect(10, 310, 103, 22));
-        horizontalLayout_8 = new QHBoxLayout(layoutWidget_7);
+        layoutWidget_8 = new QWidget(S2FlexXPDialog);
+        layoutWidget_8->setObjectName(QString::fromUtf8("layoutWidget_8"));
+        layoutWidget_8->setGeometry(QRect(10, 310, 103, 22));
+        horizontalLayout_8 = new QHBoxLayout(layoutWidget_8);
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
         horizontalLayout_8->setContentsMargins(0, 0, 0, 0);
-        label_18 = new QLabel(layoutWidget_7);
+        label_18 = new QLabel(layoutWidget_8);
         label_18->setObjectName(QString::fromUtf8("label_18"));
 
         horizontalLayout_8->addWidget(label_18);
 
-        S2FlexDialEDGLabel = new QLabel(layoutWidget_7);
+        S2FlexDialEDGLabel = new QLabel(layoutWidget_8);
         S2FlexDialEDGLabel->setObjectName(QString::fromUtf8("S2FlexDialEDGLabel"));
 
         horizontalLayout_8->addWidget(S2FlexDialEDGLabel);
 
-        S2FlexDialEDGSpinBox = new QSpinBox(layoutWidget_7);
+        S2FlexDialEDGSpinBox = new QSpinBox(layoutWidget_8);
         S2FlexDialEDGSpinBox->setObjectName(QString::fromUtf8("S2FlexDialEDGSpinBox"));
         S2FlexDialEDGSpinBox->setAccelerated(true);
         S2FlexDialEDGSpinBox->setMaximum(200);
 
         horizontalLayout_8->addWidget(S2FlexDialEDGSpinBox);
 
-        layoutWidget1 = new QWidget(S2FlexXPDialog);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 100, 103, 22));
-        horizontalLayout = new QHBoxLayout(layoutWidget1);
+        layoutWidget = new QWidget(S2FlexXPDialog);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 100, 103, 22));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label_4 = new QLabel(layoutWidget1);
+        label_4 = new QLabel(layoutWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
         horizontalLayout->addWidget(label_4);
 
-        S2FlexDialSTRLabel = new QLabel(layoutWidget1);
+        S2FlexDialSTRLabel = new QLabel(layoutWidget);
         S2FlexDialSTRLabel->setObjectName(QString::fromUtf8("S2FlexDialSTRLabel"));
 
         horizontalLayout->addWidget(S2FlexDialSTRLabel);
 
-        S2FlexDialSTRSpinBox = new QSpinBox(layoutWidget1);
+        S2FlexDialSTRSpinBox = new QSpinBox(layoutWidget);
         S2FlexDialSTRSpinBox->setObjectName(QString::fromUtf8("S2FlexDialSTRSpinBox"));
         S2FlexDialSTRSpinBox->setAccelerated(true);
         S2FlexDialSTRSpinBox->setMaximum(200);

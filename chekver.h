@@ -1,4 +1,4 @@
-#ifndef CHEKVER_H
+/* #ifndef CHEKVER_H
 #define CHEKVER_H
 
 #include <QWidget>
@@ -27,3 +27,4 @@ public slots:
 };
 
 #endif // CHEKVER_H
+*/

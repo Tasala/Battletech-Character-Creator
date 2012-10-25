@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Tue 6. Dec 12:11:39 2011
-**      by: Qt User Interface Compiler version 4.7.0
+** Created: Sun Oct 21 01:55:28 2012
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -30,7 +30,6 @@
 #include <QtGui/QTableWidget>
 #include <QtGui/QTextEdit>
 #include <QtGui/QWidget>
-#include "spinbox.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -90,6 +89,8 @@ public:
     QLabel *label_15;
     QLabel *label_16;
     QLabel *label_17;
+    QLineEdit *RunEvadeMain_2;
+    QLabel *label_42;
     QLineEdit *FreeXPMain;
     QLabel *label_18;
     QComboBox *SubAffilationMain;
@@ -103,20 +104,20 @@ public:
     QLabel *label_29;
     QLabel *label_30;
     QLabel *label_24;
-    SpinBox *EDGSpinBoxMain;
+    QSpinBox *EDGSpinBoxMain;
     QLabel *label_26;
-    SpinBox *CHASpinBoxMain;
+    QSpinBox *CHASpinBoxMain;
     QLabel *label_22;
-    SpinBox *WILSpinBoxMain;
+    QSpinBox *WILSpinBoxMain;
     QLabel *label_23;
-    SpinBox *INTSpinBoxMain;
+    QSpinBox *INTSpinBoxMain;
     QLabel *label_20;
-    SpinBox *DEXSpinBoxMain;
+    QSpinBox *DEXSpinBoxMain;
     QLabel *label_25;
-    SpinBox *RFLSpinBoxMain;
+    QSpinBox *RFLSpinBoxMain;
     QLabel *label_21;
-    SpinBox *BODSpinBoxMain;
-    SpinBox *STRSpinBoxMain;
+    QSpinBox *BODSpinBoxMain;
+    QSpinBox *STRSpinBoxMain;
     QLabel *label_19;
     QLineEdit *ScoreSTRMain;
     QLineEdit *ScoreBODMain;
@@ -202,7 +203,7 @@ public:
     QListWidget *LegsListMain;
     QListWidget *HandLeftListMain;
     QListWidget *HandRightListMain;
-    QListWidget *FeetsListMain;
+    QListWidget *FootsiesListMain;
     QFrame *line_3;
     QTableWidget *AllYouTable;
     QLabel *label_35;
@@ -221,14 +222,14 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(752, 550);
-        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        MainWindow->resize(1280, 1024);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(752, 550));
-        MainWindow->setMaximumSize(QSize(752, 550));
+        MainWindow->setMaximumSize(QSize(1280, 1024));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/img/ico1.ico"), QSize(), QIcon::Normal, QIcon::Off);
         MainWindow->setWindowIcon(icon);
@@ -262,18 +263,24 @@ public:
         actionPrint_Tables->setObjectName(QString::fromUtf8("actionPrint_Tables"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        sizePolicy.setHeightForWidth(centralwidget->sizePolicy().hasHeightForWidth());
+        centralwidget->setSizePolicy(sizePolicy);
         tabWidget = new QTabWidget(centralwidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(0, 0, 751, 531));
+        tabWidget->setGeometry(QRect(0, 0, 1271, 1001));
         tabWidget->setTabPosition(QTabWidget::South);
         tabWidget->setTabShape(QTabWidget::Rounded);
         tabWidget->setElideMode(Qt::ElideNone);
         tabWidget->setDocumentMode(true);
         MainTab = new QWidget();
         MainTab->setObjectName(QString::fromUtf8("MainTab"));
+        sizePolicy.setHeightForWidth(MainTab->sizePolicy().hasHeightForWidth());
+        MainTab->setSizePolicy(sizePolicy);
         MainGroupBox = new QGroupBox(MainTab);
         MainGroupBox->setObjectName(QString::fromUtf8("MainGroupBox"));
-        MainGroupBox->setGeometry(QRect(10, 5, 731, 501));
+        MainGroupBox->setGeometry(QRect(10, 5, 1261, 961));
+        sizePolicy.setHeightForWidth(MainGroupBox->sizePolicy().hasHeightForWidth());
+        MainGroupBox->setSizePolicy(sizePolicy);
         CharNameMain = new QLineEdit(MainGroupBox);
         CharNameMain->setObjectName(QString::fromUtf8("CharNameMain"));
         CharNameMain->setGeometry(QRect(120, 30, 191, 20));
@@ -353,7 +360,7 @@ public:
         label_11->setGeometry(QRect(20, 180, 101, 16));
         groupBox = new QGroupBox(MainGroupBox);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(20, 270, 291, 111));
+        groupBox->setGeometry(QRect(20, 270, 291, 151));
         label_12 = new QLabel(groupBox);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setGeometry(QRect(10, 20, 46, 13));
@@ -402,6 +409,14 @@ public:
         label_17 = new QLabel(groupBox);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(170, 80, 46, 13));
+        RunEvadeMain_2 = new QLineEdit(groupBox);
+        RunEvadeMain_2->setObjectName(QString::fromUtf8("RunEvadeMain_2"));
+        RunEvadeMain_2->setEnabled(false);
+        RunEvadeMain_2->setGeometry(QRect(80, 110, 71, 20));
+        RunEvadeMain_2->setReadOnly(true);
+        label_42 = new QLabel(groupBox);
+        label_42->setObjectName(QString::fromUtf8("label_42"));
+        label_42->setGeometry(QRect(10, 110, 71, 16));
         FreeXPMain = new QLineEdit(MainGroupBox);
         FreeXPMain->setObjectName(QString::fromUtf8("FreeXPMain"));
         FreeXPMain->setEnabled(false);
@@ -422,7 +437,7 @@ public:
         AttributeTab->setObjectName(QString::fromUtf8("AttributeTab"));
         AttributeGroupBox = new QGroupBox(AttributeTab);
         AttributeGroupBox->setObjectName(QString::fromUtf8("AttributeGroupBox"));
-        AttributeGroupBox->setGeometry(QRect(10, 5, 731, 501));
+        AttributeGroupBox->setGeometry(QRect(10, 5, 1261, 961));
         groupBox_3 = new QGroupBox(AttributeGroupBox);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         groupBox_3->setGeometry(QRect(610, 20, 101, 53));
@@ -444,64 +459,84 @@ public:
         label_24 = new QLabel(AttributeGroupBox);
         label_24->setObjectName(QString::fromUtf8("label_24"));
         label_24->setGeometry(QRect(21, 330, 25, 16));
-        EDGSpinBoxMain = new SpinBox(AttributeGroupBox);
+        EDGSpinBoxMain = new QSpinBox(AttributeGroupBox);
         EDGSpinBoxMain->setObjectName(QString::fromUtf8("EDGSpinBoxMain"));
         EDGSpinBoxMain->setGeometry(QRect(160, 330, 51, 20));
         EDGSpinBoxMain->setAccelerated(true);
+        EDGSpinBoxMain->setMinimum(0);
         EDGSpinBoxMain->setMaximum(900);
+        EDGSpinBoxMain->setSingleStep(10);
+        EDGSpinBoxMain->setValue(0);
         label_26 = new QLabel(AttributeGroupBox);
         label_26->setObjectName(QString::fromUtf8("label_26"));
         label_26->setGeometry(QRect(21, 300, 26, 16));
-        CHASpinBoxMain = new SpinBox(AttributeGroupBox);
+        CHASpinBoxMain = new QSpinBox(AttributeGroupBox);
         CHASpinBoxMain->setObjectName(QString::fromUtf8("CHASpinBoxMain"));
         CHASpinBoxMain->setGeometry(QRect(160, 300, 51, 20));
         CHASpinBoxMain->setAccelerated(true);
+        CHASpinBoxMain->setMinimum(0);
         CHASpinBoxMain->setMaximum(900);
+        CHASpinBoxMain->setSingleStep(10);
+        CHASpinBoxMain->setValue(0);
         label_22 = new QLabel(AttributeGroupBox);
         label_22->setObjectName(QString::fromUtf8("label_22"));
         label_22->setGeometry(QRect(21, 270, 25, 16));
-        WILSpinBoxMain = new SpinBox(AttributeGroupBox);
+        WILSpinBoxMain = new QSpinBox(AttributeGroupBox);
         WILSpinBoxMain->setObjectName(QString::fromUtf8("WILSpinBoxMain"));
         WILSpinBoxMain->setGeometry(QRect(160, 270, 51, 20));
         WILSpinBoxMain->setAccelerated(true);
+        WILSpinBoxMain->setMinimum(0);
         WILSpinBoxMain->setMaximum(800);
+        WILSpinBoxMain->setSingleStep(10);
+        WILSpinBoxMain->setValue(0);
         label_23 = new QLabel(AttributeGroupBox);
         label_23->setObjectName(QString::fromUtf8("label_23"));
         label_23->setGeometry(QRect(21, 240, 22, 16));
-        INTSpinBoxMain = new SpinBox(AttributeGroupBox);
+        INTSpinBoxMain = new QSpinBox(AttributeGroupBox);
         INTSpinBoxMain->setObjectName(QString::fromUtf8("INTSpinBoxMain"));
         INTSpinBoxMain->setGeometry(QRect(160, 240, 51, 20));
         INTSpinBoxMain->setAccelerated(true);
+        INTSpinBoxMain->setMinimum(0);
         INTSpinBoxMain->setMaximum(800);
+        INTSpinBoxMain->setSingleStep(10);
+        INTSpinBoxMain->setValue(0);
         label_20 = new QLabel(AttributeGroupBox);
         label_20->setObjectName(QString::fromUtf8("label_20"));
         label_20->setGeometry(QRect(21, 210, 24, 16));
-        DEXSpinBoxMain = new SpinBox(AttributeGroupBox);
+        DEXSpinBoxMain = new QSpinBox(AttributeGroupBox);
         DEXSpinBoxMain->setObjectName(QString::fromUtf8("DEXSpinBoxMain"));
         DEXSpinBoxMain->setGeometry(QRect(160, 210, 51, 20));
         DEXSpinBoxMain->setAccelerated(true);
+        DEXSpinBoxMain->setMinimum(0);
         DEXSpinBoxMain->setMaximum(800);
+        DEXSpinBoxMain->setSingleStep(10);
+        DEXSpinBoxMain->setValue(0);
         label_25 = new QLabel(AttributeGroupBox);
         label_25->setObjectName(QString::fromUtf8("label_25"));
         label_25->setGeometry(QRect(21, 180, 23, 16));
-        RFLSpinBoxMain = new SpinBox(AttributeGroupBox);
+        RFLSpinBoxMain = new QSpinBox(AttributeGroupBox);
         RFLSpinBoxMain->setObjectName(QString::fromUtf8("RFLSpinBoxMain"));
         RFLSpinBoxMain->setGeometry(QRect(160, 180, 51, 20));
         RFLSpinBoxMain->setAccelerated(true);
+        RFLSpinBoxMain->setMinimum(0);
         RFLSpinBoxMain->setMaximum(800);
+        RFLSpinBoxMain->setSingleStep(10);
+        RFLSpinBoxMain->setValue(0);
         label_21 = new QLabel(AttributeGroupBox);
         label_21->setObjectName(QString::fromUtf8("label_21"));
         label_21->setGeometry(QRect(21, 150, 26, 16));
-        BODSpinBoxMain = new SpinBox(AttributeGroupBox);
+        BODSpinBoxMain = new QSpinBox(AttributeGroupBox);
         BODSpinBoxMain->setObjectName(QString::fromUtf8("BODSpinBoxMain"));
         BODSpinBoxMain->setGeometry(QRect(160, 150, 51, 20));
         BODSpinBoxMain->setAccelerated(true);
         BODSpinBoxMain->setMaximum(800);
-        STRSpinBoxMain = new SpinBox(AttributeGroupBox);
+        BODSpinBoxMain->setSingleStep(10);
+        STRSpinBoxMain = new QSpinBox(AttributeGroupBox);
         STRSpinBoxMain->setObjectName(QString::fromUtf8("STRSpinBoxMain"));
         STRSpinBoxMain->setGeometry(QRect(160, 120, 51, 20));
         STRSpinBoxMain->setAccelerated(true);
         STRSpinBoxMain->setMaximum(800);
+        STRSpinBoxMain->setSingleStep(10);
         label_19 = new QLabel(AttributeGroupBox);
         label_19->setObjectName(QString::fromUtf8("label_19"));
         label_19->setGeometry(QRect(21, 120, 25, 16));
@@ -632,7 +667,7 @@ public:
         line_4->setFrameShadow(QFrame::Sunken);
         label_40 = new QLabel(AttributeGroupBox);
         label_40->setObjectName(QString::fromUtf8("label_40"));
-        label_40->setGeometry(QRect(320, 68, 151, 16));
+        label_40->setGeometry(QRect(290, 68, 201, 20));
         label_41 = new QLabel(AttributeGroupBox);
         label_41->setObjectName(QString::fromUtf8("label_41"));
         label_41->setGeometry(QRect(80, 68, 81, 16));
@@ -649,13 +684,13 @@ public:
         SkillsTabswp->setObjectName(QString::fromUtf8("SkillsTabswp"));
         TraitsGroupBox = new QGroupBox(SkillsTabswp);
         TraitsGroupBox->setObjectName(QString::fromUtf8("TraitsGroupBox"));
-        TraitsGroupBox->setGeometry(QRect(10, 5, 731, 501));
+        TraitsGroupBox->setGeometry(QRect(10, 5, 1251, 961));
         SkillResetMain = new QPushButton(TraitsGroupBox);
         SkillResetMain->setObjectName(QString::fromUtf8("SkillResetMain"));
-        SkillResetMain->setGeometry(QRect(270, 450, 75, 23));
+        SkillResetMain->setGeometry(QRect(530, 460, 75, 23));
         SkillAddMain = new QPushButton(TraitsGroupBox);
         SkillAddMain->setObjectName(QString::fromUtf8("SkillAddMain"));
-        SkillAddMain->setGeometry(QRect(270, 230, 75, 23));
+        SkillAddMain->setGeometry(QRect(530, 240, 75, 23));
         SkillAllTableMain = new QTableWidget(TraitsGroupBox);
         if (SkillAllTableMain->columnCount() < 2)
             SkillAllTableMain->setColumnCount(2);
@@ -664,7 +699,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         SkillAllTableMain->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         SkillAllTableMain->setObjectName(QString::fromUtf8("SkillAllTableMain"));
-        SkillAllTableMain->setGeometry(QRect(20, 80, 241, 401));
+        SkillAllTableMain->setGeometry(QRect(20, 80, 501, 861));
         SkillAllTableMain->setEditTriggers(QAbstractItemView::NoEditTriggers);
         SkillAllTableMain->setSelectionMode(QAbstractItemView::SingleSelection);
         SkillAllTableMain->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -688,7 +723,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
         SkillChrTableMain->setHorizontalHeaderItem(5, __qtablewidgetitem7);
         SkillChrTableMain->setObjectName(QString::fromUtf8("SkillChrTableMain"));
-        SkillChrTableMain->setGeometry(QRect(360, 80, 351, 401));
+        SkillChrTableMain->setGeometry(QRect(620, 80, 611, 861));
         SkillChrTableMain->setEditTriggers(QAbstractItemView::AnyKeyPressed);
         SkillChrTableMain->setSelectionMode(QAbstractItemView::SingleSelection);
         SkillChrTableMain->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -704,18 +739,18 @@ public:
         SkillChrTableMain->verticalHeader()->setStretchLastSection(false);
         SkillDelMain = new QPushButton(TraitsGroupBox);
         SkillDelMain->setObjectName(QString::fromUtf8("SkillDelMain"));
-        SkillDelMain->setGeometry(QRect(270, 270, 75, 23));
+        SkillDelMain->setGeometry(QRect(530, 280, 75, 23));
         DeleteSkillMain = new QPushButton(TraitsGroupBox);
         DeleteSkillMain->setObjectName(QString::fromUtf8("DeleteSkillMain"));
-        DeleteSkillMain->setGeometry(QRect(270, 310, 75, 23));
+        DeleteSkillMain->setGeometry(QRect(530, 320, 75, 23));
         line = new QFrame(TraitsGroupBox);
         line->setObjectName(QString::fromUtf8("line"));
-        line->setGeometry(QRect(283, 293, 51, 16));
+        line->setGeometry(QRect(543, 303, 51, 16));
         line->setFrameShape(QFrame::HLine);
         line->setFrameShadow(QFrame::Sunken);
         groupBox_8 = new QGroupBox(TraitsGroupBox);
         groupBox_8->setObjectName(QString::fromUtf8("groupBox_8"));
-        groupBox_8->setGeometry(QRect(270, 101, 81, 53));
+        groupBox_8->setGeometry(QRect(530, 111, 81, 53));
         CountSkillsMain = new QLabel(groupBox_8);
         CountSkillsMain->setObjectName(QString::fromUtf8("CountSkillsMain"));
         CountSkillsMain->setGeometry(QRect(26, 20, 31, 21));
@@ -730,7 +765,7 @@ public:
         TraitsTab->setObjectName(QString::fromUtf8("TraitsTab"));
         SkillsGroupBox = new QGroupBox(TraitsTab);
         SkillsGroupBox->setObjectName(QString::fromUtf8("SkillsGroupBox"));
-        SkillsGroupBox->setGeometry(QRect(10, 5, 731, 501));
+        SkillsGroupBox->setGeometry(QRect(10, 5, 1261, 961));
         groupBox_4 = new QGroupBox(SkillsGroupBox);
         groupBox_4->setObjectName(QString::fromUtf8("groupBox_4"));
         groupBox_4->setGeometry(QRect(610, 20, 101, 53));
@@ -745,7 +780,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
         TraitAllTableMain->setHorizontalHeaderItem(1, __qtablewidgetitem9);
         TraitAllTableMain->setObjectName(QString::fromUtf8("TraitAllTableMain"));
-        TraitAllTableMain->setGeometry(QRect(20, 80, 241, 401));
+        TraitAllTableMain->setGeometry(QRect(20, 80, 491, 861));
         TraitAllTableMain->setEditTriggers(QAbstractItemView::NoEditTriggers);
         TraitAllTableMain->setSelectionMode(QAbstractItemView::SingleSelection);
         TraitAllTableMain->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -766,7 +801,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
         TraitChrTableMain->setHorizontalHeaderItem(3, __qtablewidgetitem13);
         TraitChrTableMain->setObjectName(QString::fromUtf8("TraitChrTableMain"));
-        TraitChrTableMain->setGeometry(QRect(360, 80, 351, 401));
+        TraitChrTableMain->setGeometry(QRect(610, 80, 631, 861));
         TraitChrTableMain->setEditTriggers(QAbstractItemView::AnyKeyPressed);
         TraitChrTableMain->setSelectionMode(QAbstractItemView::SingleSelection);
         TraitChrTableMain->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -782,24 +817,24 @@ public:
         TraitChrTableMain->verticalHeader()->setStretchLastSection(false);
         TraitResetMain = new QPushButton(SkillsGroupBox);
         TraitResetMain->setObjectName(QString::fromUtf8("TraitResetMain"));
-        TraitResetMain->setGeometry(QRect(270, 450, 75, 23));
+        TraitResetMain->setGeometry(QRect(520, 440, 75, 23));
         TraitAddMain = new QPushButton(SkillsGroupBox);
         TraitAddMain->setObjectName(QString::fromUtf8("TraitAddMain"));
-        TraitAddMain->setGeometry(QRect(270, 230, 75, 23));
+        TraitAddMain->setGeometry(QRect(520, 220, 75, 23));
         TraitlDelMain = new QPushButton(SkillsGroupBox);
         TraitlDelMain->setObjectName(QString::fromUtf8("TraitlDelMain"));
-        TraitlDelMain->setGeometry(QRect(270, 270, 75, 23));
+        TraitlDelMain->setGeometry(QRect(520, 260, 75, 23));
         DeleteTraitsMain = new QPushButton(SkillsGroupBox);
         DeleteTraitsMain->setObjectName(QString::fromUtf8("DeleteTraitsMain"));
-        DeleteTraitsMain->setGeometry(QRect(270, 310, 75, 23));
+        DeleteTraitsMain->setGeometry(QRect(520, 300, 75, 23));
         line_2 = new QFrame(SkillsGroupBox);
         line_2->setObjectName(QString::fromUtf8("line_2"));
-        line_2->setGeometry(QRect(283, 293, 51, 16));
+        line_2->setGeometry(QRect(533, 283, 51, 16));
         line_2->setFrameShape(QFrame::HLine);
         line_2->setFrameShadow(QFrame::Sunken);
-        groupBox_9 = new QGroupBox(TraitsTab);
+        groupBox_9 = new QGroupBox(SkillsGroupBox);
         groupBox_9->setObjectName(QString::fromUtf8("groupBox_9"));
-        groupBox_9->setGeometry(QRect(280, 106, 81, 53));
+        groupBox_9->setGeometry(QRect(520, 91, 81, 53));
         CountTraitsMain = new QLabel(groupBox_9);
         CountTraitsMain->setObjectName(QString::fromUtf8("CountTraitsMain"));
         CountTraitsMain->setGeometry(QRect(26, 20, 31, 21));
@@ -808,7 +843,7 @@ public:
         EquipmentTab->setObjectName(QString::fromUtf8("EquipmentTab"));
         EquipmentGroupBox = new QGroupBox(EquipmentTab);
         EquipmentGroupBox->setObjectName(QString::fromUtf8("EquipmentGroupBox"));
-        EquipmentGroupBox->setGeometry(QRect(10, 5, 731, 501));
+        EquipmentGroupBox->setGeometry(QRect(10, 5, 1261, 961));
         label_31 = new QLabel(EquipmentGroupBox);
         label_31->setObjectName(QString::fromUtf8("label_31"));
         label_31->setGeometry(QRect(410, 50, 101, 16));
@@ -825,7 +860,7 @@ public:
         cbillsEq->setGeometry(QRect(5, 17, 91, 21));
         TraitResetMain_2 = new QPushButton(EquipmentGroupBox);
         TraitResetMain_2->setObjectName(QString::fromUtf8("TraitResetMain_2"));
-        TraitResetMain_2->setGeometry(QRect(340, 450, 51, 23));
+        TraitResetMain_2->setGeometry(QRect(570, 450, 51, 23));
         EquipAllTableMain = new QTableWidget(EquipmentGroupBox);
         if (EquipAllTableMain->columnCount() < 4)
             EquipAllTableMain->setColumnCount(4);
@@ -838,7 +873,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem17 = new QTableWidgetItem();
         EquipAllTableMain->setHorizontalHeaderItem(3, __qtablewidgetitem17);
         EquipAllTableMain->setObjectName(QString::fromUtf8("EquipAllTableMain"));
-        EquipAllTableMain->setGeometry(QRect(20, 80, 311, 401));
+        EquipAllTableMain->setGeometry(QRect(20, 80, 541, 861));
         EquipAllTableMain->setEditTriggers(QAbstractItemView::NoEditTriggers);
         EquipAllTableMain->setSelectionMode(QAbstractItemView::SingleSelection);
         EquipAllTableMain->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -849,10 +884,10 @@ public:
         EquipAllTableMain->verticalHeader()->setDefaultSectionSize(15);
         TraitAddMain_2 = new QPushButton(EquipmentGroupBox);
         TraitAddMain_2->setObjectName(QString::fromUtf8("TraitAddMain_2"));
-        TraitAddMain_2->setGeometry(QRect(340, 220, 51, 23));
+        TraitAddMain_2->setGeometry(QRect(570, 220, 51, 23));
         TraitlDelMain_2 = new QPushButton(EquipmentGroupBox);
         TraitlDelMain_2->setObjectName(QString::fromUtf8("TraitlDelMain_2"));
-        TraitlDelMain_2->setGeometry(QRect(340, 250, 51, 23));
+        TraitlDelMain_2->setGeometry(QRect(570, 250, 51, 23));
         EquipChrTableMain = new QTableWidget(EquipmentGroupBox);
         if (EquipChrTableMain->columnCount() < 6)
             EquipChrTableMain->setColumnCount(6);
@@ -869,7 +904,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem23 = new QTableWidgetItem();
         EquipChrTableMain->setHorizontalHeaderItem(5, __qtablewidgetitem23);
         EquipChrTableMain->setObjectName(QString::fromUtf8("EquipChrTableMain"));
-        EquipChrTableMain->setGeometry(QRect(400, 80, 311, 401));
+        EquipChrTableMain->setGeometry(QRect(630, 80, 611, 861));
         EquipChrTableMain->setEditTriggers(QAbstractItemView::NoEditTriggers);
         EquipChrTableMain->setSelectionMode(QAbstractItemView::SingleSelection);
         EquipChrTableMain->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -894,7 +929,7 @@ public:
         WeaponsTab->setObjectName(QString::fromUtf8("WeaponsTab"));
         WeaponsGroupBox = new QGroupBox(WeaponsTab);
         WeaponsGroupBox->setObjectName(QString::fromUtf8("WeaponsGroupBox"));
-        WeaponsGroupBox->setGeometry(QRect(10, 5, 731, 501));
+        WeaponsGroupBox->setGeometry(QRect(10, 5, 1261, 961));
         groupBox_7 = new QGroupBox(WeaponsGroupBox);
         groupBox_7->setObjectName(QString::fromUtf8("groupBox_7"));
         groupBox_7->setGeometry(QRect(610, 20, 101, 53));
@@ -931,7 +966,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem32 = new QTableWidgetItem();
         WeaponChrTableMain->setHorizontalHeaderItem(8, __qtablewidgetitem32);
         WeaponChrTableMain->setObjectName(QString::fromUtf8("WeaponChrTableMain"));
-        WeaponChrTableMain->setGeometry(QRect(20, 300, 691, 181));
+        WeaponChrTableMain->setGeometry(QRect(20, 610, 1221, 331));
         WeaponChrTableMain->setEditTriggers(QAbstractItemView::NoEditTriggers);
         WeaponChrTableMain->setSelectionMode(QAbstractItemView::SingleSelection);
         WeaponChrTableMain->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -969,7 +1004,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem42 = new QTableWidgetItem();
         WeaponAllTableMain->setHorizontalHeaderItem(9, __qtablewidgetitem42);
         WeaponAllTableMain->setObjectName(QString::fromUtf8("WeaponAllTableMain"));
-        WeaponAllTableMain->setGeometry(QRect(20, 80, 691, 181));
+        WeaponAllTableMain->setGeometry(QRect(20, 80, 1221, 491));
         WeaponAllTableMain->setEditTriggers(QAbstractItemView::NoEditTriggers);
         WeaponAllTableMain->setSelectionMode(QAbstractItemView::SingleSelection);
         WeaponAllTableMain->setSelectionBehavior(QAbstractItemView::SelectRows);
@@ -980,7 +1015,7 @@ public:
         WeaponAllTableMain->verticalHeader()->setDefaultSectionSize(15);
         AddAmmoMain = new QPushButton(WeaponsGroupBox);
         AddAmmoMain->setObjectName(QString::fromUtf8("AddAmmoMain"));
-        AddAmmoMain->setGeometry(QRect(320, 270, 61, 23));
+        AddAmmoMain->setGeometry(QRect(20, 580, 61, 23));
         WeaponType = new QComboBox(WeaponsGroupBox);
         WeaponType->setObjectName(QString::fromUtf8("WeaponType"));
         WeaponType->setGeometry(QRect(110, 50, 221, 22));
@@ -992,7 +1027,7 @@ public:
         Inventory->setObjectName(QString::fromUtf8("Inventory"));
         WeaponsGroupBox_2 = new QGroupBox(Inventory);
         WeaponsGroupBox_2->setObjectName(QString::fromUtf8("WeaponsGroupBox_2"));
-        WeaponsGroupBox_2->setGeometry(QRect(10, 5, 731, 501));
+        WeaponsGroupBox_2->setGeometry(QRect(10, 5, 1261, 961));
         frame = new QFrame(WeaponsGroupBox_2);
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setGeometry(QRect(10, 10, 221, 491));
@@ -1003,6 +1038,7 @@ public:
         new QListWidgetItem(HeadListMain);
         HeadListMain->setObjectName(QString::fromUtf8("HeadListMain"));
         HeadListMain->setGeometry(QRect(60, 10, 91, 21));
+        HeadListMain->setLayoutDirection(Qt::LeftToRight);
         HeadListMain->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         HeadListMain->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         HeadListMain->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -1062,18 +1098,18 @@ public:
         HandRightListMain->setEditTriggers(QAbstractItemView::NoEditTriggers);
         HandRightListMain->setDragDropMode(QAbstractItemView::DropOnly);
         HandRightListMain->setDefaultDropAction(Qt::IgnoreAction);
-        FeetsListMain = new QListWidget(frame);
-        new QListWidgetItem(FeetsListMain);
-        FeetsListMain->setObjectName(QString::fromUtf8("FeetsListMain"));
-        FeetsListMain->setGeometry(QRect(60, 460, 91, 21));
-        FeetsListMain->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        FeetsListMain->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        FeetsListMain->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        FeetsListMain->setDragDropMode(QAbstractItemView::DropOnly);
-        FeetsListMain->setDefaultDropAction(Qt::IgnoreAction);
+        FootsiesListMain = new QListWidget(frame);
+        new QListWidgetItem(FootsiesListMain);
+        FootsiesListMain->setObjectName(QString::fromUtf8("FootsiesListMain"));
+        FootsiesListMain->setGeometry(QRect(60, 460, 91, 21));
+        FootsiesListMain->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        FootsiesListMain->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        FootsiesListMain->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        FootsiesListMain->setDragDropMode(QAbstractItemView::DropOnly);
+        FootsiesListMain->setDefaultDropAction(Qt::IgnoreAction);
         line_3 = new QFrame(WeaponsGroupBox_2);
         line_3->setObjectName(QString::fromUtf8("line_3"));
-        line_3->setGeometry(QRect(230, 10, 16, 481));
+        line_3->setGeometry(QRect(230, 10, 16, 941));
         line_3->setFrameShape(QFrame::VLine);
         line_3->setFrameShadow(QFrame::Sunken);
         AllYouTable = new QTableWidget(WeaponsGroupBox_2);
@@ -1092,7 +1128,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem48 = new QTableWidgetItem();
         AllYouTable->setHorizontalHeaderItem(5, __qtablewidgetitem48);
         AllYouTable->setObjectName(QString::fromUtf8("AllYouTable"));
-        AllYouTable->setGeometry(QRect(250, 30, 471, 331));
+        AllYouTable->setGeometry(QRect(250, 30, 991, 561));
         AllYouTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
         AllYouTable->setDragEnabled(true);
         AllYouTable->setDragDropMode(QAbstractItemView::DragOnly);
@@ -1108,7 +1144,7 @@ public:
         label_35->setGeometry(QRect(260, 12, 101, 16));
         label_36 = new QLabel(WeaponsGroupBox_2);
         label_36->setObjectName(QString::fromUtf8("label_36"));
-        label_36->setGeometry(QRect(260, 370, 61, 16));
+        label_36->setGeometry(QRect(260, 600, 91, 16));
         ItselfAllYouTable = new QTableWidget(WeaponsGroupBox_2);
         if (ItselfAllYouTable->columnCount() < 5)
             ItselfAllYouTable->setColumnCount(5);
@@ -1123,7 +1159,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem53 = new QTableWidgetItem();
         ItselfAllYouTable->setHorizontalHeaderItem(4, __qtablewidgetitem53);
         ItselfAllYouTable->setObjectName(QString::fromUtf8("ItselfAllYouTable"));
-        ItselfAllYouTable->setGeometry(QRect(250, 390, 471, 101));
+        ItselfAllYouTable->setGeometry(QRect(250, 620, 991, 321));
         ItselfAllYouTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
         ItselfAllYouTable->setShowGrid(false);
         ItselfAllYouTable->setGridStyle(Qt::NoPen);
@@ -1136,15 +1172,15 @@ public:
         NotesTab->setObjectName(QString::fromUtf8("NotesTab"));
         NotesGroupBox = new QGroupBox(NotesTab);
         NotesGroupBox->setObjectName(QString::fromUtf8("NotesGroupBox"));
-        NotesGroupBox->setGeometry(QRect(10, 5, 731, 501));
+        NotesGroupBox->setGeometry(QRect(10, 5, 1261, 961));
         NotesMain = new QTextEdit(NotesGroupBox);
         NotesMain->setObjectName(QString::fromUtf8("NotesMain"));
-        NotesMain->setGeometry(QRect(10, 20, 711, 471));
+        NotesMain->setGeometry(QRect(10, 20, 1241, 931));
         tabWidget->addTab(NotesTab, QString());
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 752, 21));
+        menubar->setGeometry(QRect(0, 0, 1280, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuWizard = new QMenu(menubar);
@@ -1219,7 +1255,7 @@ public:
         actionNPC->setText(QApplication::translate("MainWindow", "NPC", 0, QApplication::UnicodeUTF8));
         actionPrint_Tables->setText(QApplication::translate("MainWindow", "Print Tables", 0, QApplication::UnicodeUTF8));
         MainGroupBox->setTitle(QApplication::translate("MainWindow", "Main", 0, QApplication::UnicodeUTF8));
-        CharNameMain->setText(QApplication::translate("MainWindow", "Enter Charachter name", 0, QApplication::UnicodeUTF8));
+        CharNameMain->setText(QApplication::translate("MainWindow", "Enter Character name", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -1229,7 +1265,7 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Affialtion:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Affiliation:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         label_3->setText(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -1273,12 +1309,12 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Hair Collor:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Hair Color:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         label_10->setText(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Eye Collor:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Eye Color:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         CBillsMain->setText(QApplication::translate("MainWindow", "1000", 0, QApplication::UnicodeUTF8));
         label_11->setText(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -1322,6 +1358,12 @@ public:
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Swim:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+        RunEvadeMain_2->setText(QApplication::translate("MainWindow", "0", 0, QApplication::UnicodeUTF8));
+        label_42->setText(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Moonwalk:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         FreeXPMain->setText(QApplication::translate("MainWindow", "5000", 0, QApplication::UnicodeUTF8));
         label_18->setText(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -1332,7 +1374,7 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Sub Affialtion:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Sub Affiliation:</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(MainTab), QApplication::translate("MainWindow", "Main", 0, QApplication::UnicodeUTF8));
         AttributeGroupBox->setTitle(QApplication::translate("MainWindow", "Attribute", 0, QApplication::UnicodeUTF8));
         groupBox_3->setTitle(QApplication::translate("MainWindow", "Free XP", 0, QApplication::UnicodeUTF8));
@@ -1431,7 +1473,7 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:600;\">Life Module demand</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:600;\">Life Module Requirements</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         label_41->setText(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -1567,7 +1609,7 @@ public:
          << QApplication::translate("MainWindow", "Miscellaneous Gear", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("MainWindow", "Medical", 0, QApplication::UnicodeUTF8)
         );
-        label_34->setText(QApplication::translate("MainWindow", "Type Equpment:", 0, QApplication::UnicodeUTF8));
+        label_34->setText(QApplication::translate("MainWindow", "Equipment Type:", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(EquipmentTab), QApplication::translate("MainWindow", "Equipment", 0, QApplication::UnicodeUTF8));
         WeaponsGroupBox->setTitle(QApplication::translate("MainWindow", "Weapons", 0, QApplication::UnicodeUTF8));
         groupBox_7->setTitle(QApplication::translate("MainWindow", "C-Bills", 0, QApplication::UnicodeUTF8));
@@ -1646,7 +1688,7 @@ public:
          << QApplication::translate("MainWindow", "Demolitions", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("MainWindow", "Weapons Accessories", 0, QApplication::UnicodeUTF8)
         );
-        label_33->setText(QApplication::translate("MainWindow", "Type Weapon:", 0, QApplication::UnicodeUTF8));
+        label_33->setText(QApplication::translate("MainWindow", "Weapon Type:", 0, QApplication::UnicodeUTF8));
         tabWidget->setTabText(tabWidget->indexOf(WeaponsTab), QApplication::translate("MainWindow", "Weapons", 0, QApplication::UnicodeUTF8));
         WeaponsGroupBox_2->setTitle(QApplication::translate("MainWindow", "Inventory", 0, QApplication::UnicodeUTF8));
 
@@ -1699,11 +1741,11 @@ public:
         HandRightListMain->setSortingEnabled(__sortingEnabled6);
 
 
-        const bool __sortingEnabled7 = FeetsListMain->isSortingEnabled();
-        FeetsListMain->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem7 = FeetsListMain->item(0);
-        ___qlistwidgetitem7->setText(QApplication::translate("MainWindow", "Feets", 0, QApplication::UnicodeUTF8));
-        FeetsListMain->setSortingEnabled(__sortingEnabled7);
+        const bool __sortingEnabled7 = FootsiesListMain->isSortingEnabled();
+        FootsiesListMain->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem7 = FootsiesListMain->item(0);
+        ___qlistwidgetitem7->setText(QApplication::translate("MainWindow", "Footsies", 0, QApplication::UnicodeUTF8));
+        FootsiesListMain->setSortingEnabled(__sortingEnabled7);
 
         QTableWidgetItem *___qtablewidgetitem43 = AllYouTable->horizontalHeaderItem(0);
         ___qtablewidgetitem43->setText(QApplication::translate("MainWindow", "Name", 0, QApplication::UnicodeUTF8));
@@ -1717,8 +1759,8 @@ public:
         ___qtablewidgetitem47->setText(QApplication::translate("MainWindow", "Location", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem48 = AllYouTable->horizontalHeaderItem(5);
         ___qtablewidgetitem48->setText(QApplication::translate("MainWindow", "Notes", 0, QApplication::UnicodeUTF8));
-        label_35->setText(QApplication::translate("MainWindow", "You have:", 0, QApplication::UnicodeUTF8));
-        label_36->setText(QApplication::translate("MainWindow", "Weapons", 0, QApplication::UnicodeUTF8));
+        label_35->setText(QApplication::translate("MainWindow", "Owned Equipment:", 0, QApplication::UnicodeUTF8));
+        label_36->setText(QApplication::translate("MainWindow", "Owned Weapons:", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem49 = ItselfAllYouTable->horizontalHeaderItem(0);
         ___qtablewidgetitem49->setText(QApplication::translate("MainWindow", "Name", 0, QApplication::UnicodeUTF8));
         QTableWidgetItem *___qtablewidgetitem50 = ItselfAllYouTable->horizontalHeaderItem(1);
