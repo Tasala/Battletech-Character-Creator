@@ -1,8 +1,6 @@
-/*
 #include "chekver.h"
 
-// #define URL "http://bthub.net/download/battletech-character-creator-2/"
-#define URL "http://www.fillinsheets.com"
+#define URL "http://bthub.net/download/battletech-character-creator-2/"
 
 ChkVer::ChkVer(QWidget *parent, QString ver):
     QWidget(parent)
@@ -68,4 +66,3 @@ void ChkVer::ShowMessage() {
     trayIcon->showMessage("Battletech Character Creator","New version available! Download now! http://bthub.net", icon, 16000);
     trayIcon->show();
 }
-*/

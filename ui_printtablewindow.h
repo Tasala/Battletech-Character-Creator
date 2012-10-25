@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'printtablewindow.ui'
 **
-** Created: Sun Oct 21 01:55:28 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Tue 13. Sep 17:47:51 2011
+**      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

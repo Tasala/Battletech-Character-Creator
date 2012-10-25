@@ -3,6 +3,7 @@
 CharData::CharData(QWidget *parent) :
     QWidget(parent)
 {
+    //инициализируем начальные атрибуты
     startXP = 5000;
     clearChar();
 }
@@ -30,6 +31,7 @@ void CharData::Atribute()
     preCharTraits.clear();
 }
 
+//изменяем скилы
 void CharData::changeSkills(QString skillName, int skillXP)
 {
     if (charSkills.count() == 0) {
@@ -44,7 +46,7 @@ void CharData::changeSkills(QString skillName, int skillXP)
         }
     }
 }
-
+//ищем соответсвие скила
 int CharData::findSkill(QString fSkillName) {
     int b=0;
     for (int i = 0; i < charSkills.count(); i++) {
@@ -56,6 +58,7 @@ int CharData::findSkill(QString fSkillName) {
     return 100500; //magic number
 }
 
+//изменяем трейтцы
 void CharData::changeTraits(QString traitsName, int traitsXP)
 {
     if (charTraits.count() == 0) {
@@ -71,6 +74,7 @@ void CharData::changeTraits(QString traitsName, int traitsXP)
     }
 }
 
+//ищем соответсвие трайтца
 int CharData::findTraits(QString fTraitsName) {
     int b=0;
     for (int i = 0; i < charTraits.count(); i++) {
@@ -113,7 +117,7 @@ void CharData::clearChar()
     charAttr.clear();
     charSkills.clear();
     charTraits.clear();
-    xp = startXP;
+    xp = startXP; //иницализация XP
     Atribute();
     changeSkills("Language/English", 20);
     changeSkills("Perception", 10);

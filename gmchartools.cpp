@@ -12,11 +12,23 @@ GMCharTools::GMCharTools(QWidget *parent) :
     addCBills = 0;
     addXP = 0;
 
+//    QRegExp regExp("[0-9]{0,}[.][0-9]{1,2}");
     QRegExp regExp("[0-9]{0,}");
     ui->ToMoneyAddGm->setValidator(new QRegExpValidator(regExp,this));
     ui->FromMoneyAddGm->setValidator(new QRegExpValidator(regExp,this));
     QRegExp regExpXP("[0-9]{0,}");
     ui->XPAddGM->setValidator(new QRegExpValidator(regExpXP,this));
+
+//    double a = 12345.12;
+//    double b = 54321.12;
+//    double c;
+
+//    c = a*b;
+
+//    QString str;
+//    str = QVariant(c).toString();
+
+//    qDebug() << str;
 }
 
 GMCharTools::~GMCharTools()

@@ -74,8 +74,8 @@ Wizard::Wizard(QWidget *parent) :
 
     delete loadres;
 
-    hideGUIElem();    //     STAGE0
-    connectEvent();   //     STAGE0
+    hideGUIElem();  //     STAGE0
+    connectEvent(); //     STAGE0
     S1ConnectEvent(); //     STAGE1
     S2ConnectEvent(); //     STAGE2
     S3ConnectEvent(); //     STAGE3
@@ -107,6 +107,7 @@ void Wizard::changeEvent(QEvent *e)
         break;
     }
 }
+
 
 void Wizard::MainWizard() {
     switch(this->currentId()) {
@@ -149,6 +150,7 @@ void Wizard::MainWizard() {
         break;
     }
 }
+
 
 void Wizard::BackChange() {
     switch(this->currentId()) {
@@ -213,11 +215,12 @@ void Wizard::back() {
         break;
     default:
         // should never be reached
-		break;
+        break;
     }
 
 
 }
+
 
 //    
 void Wizard::connectEvent() {
@@ -237,8 +240,7 @@ void Wizard::connectEvent() {
     connect(ui->comBoxComWoB, SIGNAL(activated(QString)), this, SLOT(changeWobComBox(QString)));
     connect(this->button(QWizard::NextButton), SIGNAL(clicked()), this, SLOT(MainWizard()));
 //    connect(this->button(Wizard::BackButton), SIGNAL(clicked()), this, SLOT(BackChange()));
-	
-//	connect(this->button(QWizard::FinishButton),SIGNAL(pressed()), this, SLOT(FinishWizard()));
+//    connect(this->button(QWizard::FinishButton),SIGNAL(pressed()), this, SLOT(FinishWizard()));
 //    connect(this, SIGNAL(accepted()), this,SLOT(FinishWizard()));
     connect(s0moredial, SIGNAL(accepted()), this, SLOT(S0AdvDialAccept()));
     connect(s0moredial, SIGNAL(rejected()), this, SLOT(S0AdvDialCancel()));
@@ -515,6 +517,9 @@ void Wizard::change() {
     printTraitsTable();
 
 }
+
+
+
 //    XP
 void Wizard::changeXP(int cXP, bool direct)
 {
@@ -527,6 +532,7 @@ void Wizard::changeXP(int cXP, bool direct)
     ui->statusXP->setText(QString::number(chr_dat->xp));
     ui->statusXP->setFont(QFont("MS Shell Dlg 2", 14, QFont::Bold));
 }
+
 //    STAGE: 0
 void Wizard::changeAff(int subPos)
 {
@@ -618,6 +624,7 @@ void Wizard::changeAff(int subPos)
     chr_dat->AffName.first = ui->Aff_ComBox->currentText();
     chr_dat->AffName.second = ui->Aff_ComBox->currentIndex();
 }
+
 //  
 void Wizard::changeStartLang(QString str) {
     chr_dat->changeSkills(str, 20);
@@ -631,6 +638,7 @@ void Wizard::changeStartLang(QString str) {
     swpLang = str;
     change();
 }
+
 //    
 void Wizard::initStartLang(QStringList lLang)
 {
@@ -658,6 +666,9 @@ void Wizard::initStartLang(QStringList lLang)
     }
     changeXP(calculateXP(),true); //        XP
 }
+
+
+
 //changeAffElem1
 void Wizard::changeAffElem1(QString str) {
 
@@ -789,6 +800,7 @@ void Wizard::changeAffElem1(QString str) {
     }
     change();
 }
+
 //changeAffElem2
 void Wizard::changeAffElem2(QString str)
 {
@@ -864,6 +876,9 @@ void Wizard::changeAffElem2(QString str)
     }
     change();
 }
+
+
+
 //  
 void Wizard::printSkillTable() {
     ui->SkillsTable->clear();
@@ -896,6 +911,7 @@ void Wizard::printTraitsTable()
     }
 
 }
+
 //  XP
 int Wizard::calculateXP()
 {
@@ -943,6 +959,7 @@ void Wizard::addAfillTraits()
         chr_dat->changeTraits(txt_res->affTraits[sCount].first,txt_res->affTraits[sCount].second);
     }
 }
+
 //    /
 void Wizard::changeComsBox(bool chk)
 {
@@ -1043,6 +1060,7 @@ void Wizard::changeWoB(bool chkRadBut)
 
 
 }
+
 //  ,  
 void Wizard::addAffElem(int posAff)
 {
@@ -1113,6 +1131,7 @@ void Wizard::addAffElem(int posAff)
     }
 
 }
+
 //     
 void Wizard::changeSubAffil(int subAffPos)
 {
@@ -1287,6 +1306,7 @@ void Wizard::removeOldParamCast() {
     txt_res->affSkillsCast.clear();
     txt_res->affTraitsCast.clear();
 }
+
 // 1   
 void Wizard::changeElem1(QString nameElem1) {
     switch(ui->Aff_ComBox->currentIndex()) {
@@ -1484,6 +1504,7 @@ void Wizard::changeElem1main(QString nameElem1) {
         }
     }
 }
+
 // 2   
 void Wizard::changeElem2(QString nameElem2) {
     switch(ui->Aff_ComBox->currentIndex()) {
@@ -1654,6 +1675,7 @@ void Wizard::changeElem2main(QString nameElem2) {
     }
 
 }
+
 // 3   
 void Wizard::changeElem3(QString nameElem3) {
     switch(ui->Aff_ComBox->currentIndex()) {
@@ -1801,13 +1823,18 @@ void Wizard::changeElem3main(QString nameElem3) {
 //            chr_dat->changeTraits("Reputation", -10);
 //            swpAdvTraitElem.append(qMakePair(tmpName, tmpXP));
 //        }
+
+
 //        break;
 //    default:
 //        changeElem4main(nameElem4);
 //        break;
 //    }
+
 //    change();
+
 //}
+
 //void Wizard::changeElem4main(QString nameElem4) {
 //    //
 //    if (txt_res->affSkillsElem4 != 0) {
@@ -1816,6 +1843,7 @@ void Wizard::changeElem3main(QString nameElem3) {
 //            chr_dat->changeSkills(swpAffSkillsElem4, -swpAffSkillsElem4Int);
 //            chr_dat->clearZeroSkills();
 //        }
+
 //        swpAffSkillsElem4 = nameElem4;
 //        swpAffSkillsElem4Int = txt_res->affSkillsElem4;
 //    } else {
@@ -1826,6 +1854,7 @@ void Wizard::changeElem3main(QString nameElem3) {
 //            swpAffSkillsElem4Int = 0;
 //        }
 //    }
+
 //    //
 //    if (txt_res->affTraitsElem4 != 0) {
 //        chr_dat->changeTraits(nameElem4, txt_res->affTraitsElem4);
@@ -1837,6 +1866,7 @@ void Wizard::changeElem3main(QString nameElem3) {
 //                ui->TraitsTable->clear();
 //            }
 //        }
+
 //        swpAffTraitsElem4 = nameElem4;
 //        swpAffTraitsElem4Int = txt_res->affTraitsElem4;
 //    } else {
@@ -1913,6 +1943,7 @@ void Wizard::clearAdvSwap() {
 //        }
 //        swpAffAttrElem4 = elemName;
 //    }
+
 //    if(ui->ComBoxSubAff4->currentIndex() >= 65) {
 //        if(swpAffTraitsElem4.isEmpty() != true) {
 //            chr_dat->changeTraits(swpAffTraitsElem4, -swpAffTraitsElem4Int);
@@ -1920,16 +1951,19 @@ void Wizard::clearAdvSwap() {
 //            swpAffTraitsElem4.clear();
 //            swpAffTraitsElem4Int = 0;
 //        }
+
 //        if (swpAffAttrElem4.isEmpty() != true ) {
 //            chr_dat->charAttr[swpAffAttrElem4] -= txt_res->affSkillsElem4;
 //            swpAffAttrElem4.clear();
 //        }
+
 //        if (txt_res->affSkillsElem4 != 0) {
 //            chr_dat->changeSkills(elemName, txt_res->affSkillsElem4);
 //            if(swpAffSkillsElem4.isEmpty() != true) {
 //                chr_dat->changeSkills(swpAffSkillsElem4, -swpAffSkillsElem4Int);
 //                chr_dat->clearZeroSkills();
 //            }
+
 //            swpAffSkillsElem4 = elemName;
 //            swpAffSkillsElem4Int = txt_res->affSkillsElem4;
 //        } else {
@@ -1941,6 +1975,7 @@ void Wizard::clearAdvSwap() {
 //            }
 //        }
 //    }
+
 //    if (ui->ComBoxSubAff4->currentIndex() > 7 &&  ui->ComBoxSubAff4->currentIndex() < 65 ) {
 //        if(swpAffSkillsElem4.isEmpty() != true) {
 //            chr_dat->changeSkills(swpAffSkillsElem4, -swpAffSkillsElem4Int);
@@ -1948,16 +1983,19 @@ void Wizard::clearAdvSwap() {
 //            swpAffSkillsElem4.clear();
 //            swpAffSkillsElem4Int = 0;
 //        }
+
 //        if (swpAffAttrElem4.isEmpty() != true ) {
 //            chr_dat->charAttr[swpAffAttrElem4] -= txt_res->affSkillsElem4;
 //            swpAffAttrElem4.clear();
 //        }
+
 //        if (txt_res->affTraitsElem4 != 0) {
 //            chr_dat->changeTraits(elemName, txt_res->affTraitsElem4);
 //            if(swpAffTraitsElem4.isEmpty() != true) {
 //                chr_dat->changeTraits(swpAffTraitsElem4, -swpAffTraitsElem4Int);
 //                chr_dat->clearZeroTraits();
 //            }
+
 //            swpAffTraitsElem4 = elemName;
 //            swpAffTraitsElem4Int = txt_res->affTraitsElem4;
 //        } else {
@@ -1967,9 +2005,12 @@ void Wizard::clearAdvSwap() {
 //                swpAffTraitsElem4.clear();
 //                swpAffTraitsElem4Int = 0;
 //            }
+
 //        }
 //    }
+
 //}
+
 //    6 
 //void Wizard::flexXpChange(QString elemName) {
 //    if (ui->ComBoxSubAff4->currentIndex() <= 7) {
@@ -1990,6 +2031,7 @@ void Wizard::clearAdvSwap() {
 //        swpAdvTraitElem.append(qMakePair(elemName, txt_res->affTraitsElem4));
 //    }
 //}
+
 //   
 //void Wizard::flexXpChangeOther(QString elemName) {
 //    if (ui->ComBoxSubAff4->currentIndex() <= 7) {
@@ -2004,12 +2046,14 @@ void Wizard::clearAdvSwap() {
 //            chr_dat->charAttr[elemName] += txt_res->affTraitsElem4;
 //        }
 //    }
+
 //    if(ui->ComBoxSubAff4->currentIndex() >= 8 && ui->ComBoxSubAff4->currentIndex() <= 64){
 //        chr_dat->charAttr[swpAffAttrElem4] -= txt_res->affTraitsElem4;
 //        swpAffAttrElem4.clear();
 //        chr_dat->changeTraits(elemName, txt_res->affTraitsElem4); //
 //        swpAdvTraitElem.append(qMakePair(elemName, txt_res->affTraitsElem4));
 //    }
+
 //    if(ui->ComBoxSubAff4->currentIndex() >= 65){
 //        chr_dat->charAttr[swpAffAttrElem4] -= txt_res->affTraitsElem4;
 //        swpAffAttrElem4.clear();
@@ -3151,6 +3195,7 @@ void Wizard::S2ChangeLateChildHood(QString nameElem) {
 
 }
 
+
 void Wizard::S2Change() {
 
     ui->S2StatusXP->setText(QString::number(chr_dat->xp));
@@ -3557,6 +3602,7 @@ void Wizard::S3ConnectEvent() {
 
 }
 
+
 void Wizard::S3RemoveOldParam() {
     changeXP(stage3->s3XpCost, false);
     QMapIterator <QString, int> i(stage3->s3Attr);
@@ -3632,6 +3678,7 @@ void Wizard::S3PrintTraitsTable()
     }
 
 }
+
 
 void Wizard::S3SChoolAddButtonClick() {
 
@@ -3719,6 +3766,7 @@ void Wizard::S3SChoolAddButtonClick() {
 
 
 }
+
 
 void Wizard::S3BasicAddButtonClick() {
 
@@ -4019,6 +4067,7 @@ void Wizard::S3CallFieldDial(QString nameElem) {
     }
 
 }
+
 
 void Wizard::S3FieldDialogAccept() {
     for(int i=0; i < s3fielddial->s3FieldDialSkills.count(); i++) {
@@ -4472,6 +4521,8 @@ void Wizard::on_SexComboBox_activated(QString nameElem)
     chr_dat->sex = nameElem;
 }
 
+
+
 void Wizard::on_StartXPcheckBox_toggled(bool checked)
 {
     if(checked == false) {
@@ -4486,6 +4537,7 @@ void Wizard::on_startXPSpinBox_valueChanged(int startXP)
 {
     chr_dat->startXP = startXP;
 }
+
 
 QString Wizard::SkillDesc(QString nameSkill) {
     QString description;
@@ -4513,6 +4565,7 @@ QString Wizard::TraitsDesc(QString nameTraits) {
 
     return description;
 }
+
 
 void Wizard::ChangeAgeAttr(int age) {
     chr_dat->charAttr["STR"] = chr_dat->charAttr["STR"] - txt_res->ageCharAttr["STR"];

@@ -41,7 +41,7 @@ CarierFields::CarierFields(QWidget *parent) :
     // Doctor
     masterFieldList.insert("Doctor","Administration");
     masterFieldList.insert("Doctor","Career/Doctor");
-    masterFieldList.insert("Doctor","MedTech/General");
+    masterFieldList.insert("Doctor","MedTech");
     masterFieldList.insert("Doctor","Protocol/Affiliation");
     masterFieldList.insert("Doctor","Surgery/Any");
 
@@ -94,7 +94,7 @@ CarierFields::CarierFields(QWidget *parent) :
     masterFieldList.insert("Medical Assistant","Computers");
     masterFieldList.insert("Medical Assistant","Career/Medtech");
     masterFieldList.insert("Medical Assistant","Interests/Pharmacology");
-    masterFieldList.insert("Medical Assistant","MedTech/General");
+    masterFieldList.insert("Medical Assistant","MedTech");
     masterFieldList.insert("Medical Assistant","Perception");
 
     // Merchant
@@ -246,7 +246,7 @@ CarierFields::CarierFields(QWidget *parent) :
     masterFieldList.insert("Police Officer","Career/Police");
     masterFieldList.insert("Police Officer","Driving/Any");
     masterFieldList.insert("Police Officer","Martial Arts");
-    masterFieldList.insert("Police Officer","MedTech/General");
+    masterFieldList.insert("Police Officer","MedTech");
     masterFieldList.insert("Police Officer","Small Arms");
     masterFieldList.insert("Police Officer","Streetwise/Affiliation");
 
@@ -262,14 +262,14 @@ CarierFields::CarierFields(QWidget *parent) :
     // Basic Training
     masterFieldList.insert("Basic Training","Career/Soldier");
     masterFieldList.insert("Basic Training","Martial Arts");
-    masterFieldList.insert("Basic Training","MedTech/General");
+    masterFieldList.insert("Basic Training","MedTech");
     masterFieldList.insert("Basic Training","Navigation/Ground");
     masterFieldList.insert("Basic Training","Small Arms");
 
     // Basic Training (Naval)
     masterFieldList.insert("Basic Training (Naval)","Career/Pilot or Ship's Crew");
     masterFieldList.insert("Basic Training (Naval)","Martial Arts");
-    masterFieldList.insert("Basic Training (Naval)","MedTech/General");
+    masterFieldList.insert("Basic Training (Naval)","MedTech");
     masterFieldList.insert("Basic Training (Naval)","Navigation/Space");
     masterFieldList.insert("Basic Training (Naval)","Small Arms");
     masterFieldList.insert("Basic Training (Naval)","Zero-G Operations");
@@ -406,7 +406,7 @@ CarierFields::CarierFields(QWidget *parent) :
 
     // Clan Basic Training
     masterFieldList.insert("Clan Basic Training","Martial Arts");
-    masterFieldList.insert("Clan Basic Training","MedTech/General");
+    masterFieldList.insert("Clan Basic Training","MedTech");
     masterFieldList.insert("Clan Basic Training","Melee Weapons");
     masterFieldList.insert("Clan Basic Training","Navigation/Ground");
     masterFieldList.insert("Clan Basic Training","Protocol/Affiliation");

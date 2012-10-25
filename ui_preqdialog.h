@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'preqdialog.ui'
 **
-** Created: Sun Oct 21 01:55:28 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Wed 14. Sep 16:02:43 2011
+**      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -55,7 +55,7 @@ public:
         buttonBox->setCenterButtons(true);
         label = new QLabel(PreqDialog);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(30, 10, 201, 20));
+        label->setGeometry(QRect(60, 10, 151, 16));
         line = new QFrame(PreqDialog);
         line->setObjectName(QString::fromUtf8("line"));
         line->setGeometry(QRect(30, 22, 201, 16));
@@ -103,7 +103,7 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:600;\">Life Module Requirements</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:11pt; font-weight:600;\">Life Module demand</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("PreqDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -118,7 +118,7 @@ public:
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Automatically allocate?</span></p></body></html>", 0, QApplication::UnicodeUTF8));
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">To use automatic fixing prerequisites?</span></p></body></html>", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };
